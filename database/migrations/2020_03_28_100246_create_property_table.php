@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('property', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->string('property_name');
             $table->enum('area',['lombok_barat','lombok_timur','lombok_utara']);
             $table->enum('type',['villa','hotel','guest_house','cottage']);
