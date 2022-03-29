@@ -160,7 +160,7 @@
                 </div> --}}
             </div>
         </nav>
-        <div class="gambar1"><img width="680" height="500" src="/image/Decore.png"></div>
+        <div class="gambar1"><img width="680" height="500" src="/image/cover.png"></div>
         <img class="model" src="/image/Image.png" alt="">
     </div>
 

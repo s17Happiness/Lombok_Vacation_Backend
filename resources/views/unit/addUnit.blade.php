@@ -96,7 +96,7 @@
                     <a class="nav-link active" href="#">Guest House</a>
                 </div>
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" href="#"><i class="glyphicon glyphicon-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>
+                    <a class="nav-link active" href="{{ url('update-profile') }}"><i class="glyphicon glyphicon-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>
                 </div>
             </div>
         </div>
