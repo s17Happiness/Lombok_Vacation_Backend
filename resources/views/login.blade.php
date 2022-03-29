@@ -107,16 +107,17 @@
             <img class="Logo" src="/image/logo2revisi.png" alt="">
         </a>
         <h3><span class="head">Login</span></h3>
-        <form>
+        <form method="POST" action="{{ url('login') }}">
+            @csrf
             <div class="mb-4">
-                <input type="text" class="form-control" placeholder="Email atau username">
+                <input type="text" class="form-control" placeholder="Email" name="email">
                 <div id="emailHelp" class="form-text"></div>
             </div>
             <div class="mb-2">
-                <input type="password" class="form-control" id="myInput" placeholder="Password">
+                <input type="password" class="form-control" id="myInput" placeholder="Password" name="password">
             </div>
             <a href="{{ url('register') }}" class="sandi">Daftar</a> <br><span class="Daftar">Belum punya akun?</span>
-            <a href=""><button type="submit" class="btn">Login</button></a>
+            <button type="submit" class="btn">Login</button>
         </form>
     </div>
 
