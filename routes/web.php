@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,9 @@ use App\Http\Controllers\LandingPageController;
 |
 */
 
-Route::get('/', function () {
-    return view('landingpage/landing');
-});
-
+Route::get('/', [LandingPageController::class,"logo"]);
 Route::get('/login', [LandingPageController::class,"loginButton"]);
-
 Route::get('/register', [LandingPageController::class,"registerButton"]);
+
+Route::post('/register', [UserController::class,"store"]);
+Route::post('/login', [UserController::class,"login"]);

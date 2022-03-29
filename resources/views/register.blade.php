@@ -117,16 +117,27 @@
         </a>
 
         <h3><span class="head">Register</span></h3>
-        <form>
+        <form method="POST" action="{{ url('register') }}">
+            @csrf
             <div class="mb-4">
-                <input type="text" class="form-control" placeholder="Email atau username">
+                <input type="text" class="form-control" placeholder="Name" name="name">
+            </div>
+            <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Email" name="email">
                 <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="mb-2">
-                <input type="password" class="form-control" id="myInput" placeholder="Password">
+            <div class="mb-4">
+                <input type="text" class="form-control" placeholder="No. HP" name="no_hp">
             </div>
+            <div class="mb-4">
+                <input type="password" class="form-control" id="myInput" placeholder="Password" name="password">
+            </div>
+            <div class="mb-4">
+                <input type="password" class="form-control" id="myInput" placeholder="Password Confirmation" name="password_confirmation">
+            </div>
+
             <a href="{{ url('login') }}" class="sandi">Login</a> <br><span class="Daftar">Sudah punya akun?</span>
-            <a href=""><button type="submit" class="btn">Daftar</button></a>
+            <button type="submit" class="btn">Daftar</button>
         </form>
     </div>
 
