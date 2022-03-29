@@ -16,7 +16,7 @@ class UserController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/register')
+            return redirect()->intended('/add-property')
                         ->withSuccess('Signed in');
         }
 
@@ -33,6 +33,6 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect()->to('/');
+        return redirect()->to('/add-property');
     }
 }

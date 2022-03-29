@@ -9,11 +9,13 @@ class Unit extends Model
 {
     use HasFactory;
 
+    protected $table = 'unit';
+
     public $fillable = [
         'property_id',
         'unit_name',
         'unit_picture',
-        'unit_desription',
+        'unit_description',
         'total_unit',
         'price'
     ];

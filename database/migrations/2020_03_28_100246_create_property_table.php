@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->string('property_name');
-            $table->enum('area',['lombok_barat','lombok_timur','lombok_utara']);
+            $table->enum('area',['lombok barat','lombok timur','lombok utara', 'lombok tengah', 'gili', 'mataram']);
             $table->enum('type',['villa','hotel','guest_house','cottage']);
             $table->timestamps();
         });
