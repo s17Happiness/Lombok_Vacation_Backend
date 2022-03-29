@@ -22,11 +22,20 @@ Route::get('/', [LandingPageController::class,"logo"]);
 Route::get('/login', [LandingPageController::class,"loginButton"]);
 Route::get('/register', [LandingPageController::class,"registerButton"]);
 
+Route::get('/update-profile', [UserController::class,"updateProfileView"]);
+Route::post('/update-profile', [UserController::class,"updateProfile"]);
 Route::post('/register', [UserController::class,"store"]);
 Route::post('/login', [UserController::class,"login"]);
 
 Route::get('/add-property', [PropertyController::class,"view"]);
 Route::post('/add-property', [PropertyController::class,"store"]);
+Route::get('/update-property/{id}', [PropertyController::class,"updatePropertyView"]);
+Route::post('/update-property/{id}', [PropertyController::class,"updateProperty"]);
 
 Route::get('/property/{id}/add-unit', [UnitController::class,"view"]);
 Route::post('/property/{id}/add-unit', [UnitController::class,"store"]);
+Route::get('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updateUnitView"]);
+Route::post('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updateUnit"]);
+
+
+

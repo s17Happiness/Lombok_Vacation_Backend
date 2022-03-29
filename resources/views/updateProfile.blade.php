@@ -77,6 +77,13 @@
             margin-left: 70px;
         }
 
+        .model {
+            position: absolute;
+            width: 530px;
+            left: 680px;
+            top: 125px;
+        }
+
     </style>
 </head>
 
@@ -95,45 +102,28 @@
                     <a class="nav-link active" href="#">Guest House</a>
                 </div>
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" href="{{ url('update-profile') }}"><i class="glyphicon glyphicon-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>
-
+                    <a class="nav-link active" href="#"><i class="glyphicon glyphicon-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>
                 </div>
             </div>
         </div>
-        </div>
     </nav>
-    <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div>
+    <div class="gambar1"><img width="680" height="500" src="/image/cover.png"></div>
+    <img class="model" src="/image/Image.png" alt="">
 
-    <h6 style="color: gray; font-size: small;">Lombok Vacation Property</h6>
-    <h3><span class="head">Add Property</span></h3>
+    <br>
+    <br>
+    <h6 style="color: gray; font-size: small;">Lombok Vacation</h6>
+    <h3><span class="head">Edit Profile</span></h3>
     <div>
-        <form method="POST" action="{{ url('add-property') }}">
+        <form method="POST" action="{{ url('update-profile') }}">
             @csrf
-            <label style="margin-left: 75px; margin-top: 35px; font-size: small; color: #181E4B;" for="pname">Nama Property</label>
+            <input style="height:50px; width:500px; margin-left: 75px;" type="text" id="pname" name="name" value="{{ auth()->user()->name }}">
             <br>
-            <input style="height:50px; width:500px; margin-left: 75px;" type="text" id="pname" name="name" placeholder="Masukkan nama property...">
+            <input style="height:50px; width:500px; margin-left: 75px;" type="text" id="email" name="email" value="{{ auth()->user()->email }}">
             <br>
-            <label style="margin-left: 75px; margin-top: 10px; font-size: small; color: #181E4B;" for="area">Pilih Area</label>
+            <input style="height:50px; width:500px; margin-left: 75px;" type="text" id="no_hp" name="no_hp" value="{{ auth()->user()->no_hp }}">
             <br>
-            <select style="height:50px; width:500px; margin-left: 75px;" id="area" name="area">
-                <option value="lombok barat">Lombok Barat</option>
-                <option value="lombok utara">Lombok Utara</option>
-                <option value="lombok timur">Lombok Timur</option>
-                <option value="mataram">Kota Mataram</option>
-                <option value="lombok tengah">Lombok Tengah</option>
-                <option value="gili">Gili</option>
-            </select>
-            <br>
-            <label style="margin-left: 75px; margin-top: 20px; font-size: small; color: #181E4B;" for="type">Pilih Type</label>
-            <br>
-            <select style="height:50px; width:500px; margin-left: 75px;" id="type" name="type">
-                <option value="villa">Villa</option>
-                <option value="hotel">Hotel</option>
-                <option value="guest_house">Guest House</option>
-                <option value="cottage">Cottage</option>
-            </select>
-            <br>
-            <a href=""><button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Tambah</button></a>
+            <button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Edit</button>
         </form>
     </div>
 

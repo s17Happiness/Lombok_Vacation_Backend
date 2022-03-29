@@ -11,6 +11,28 @@ class PropertyController extends Controller
         return view('property.addProperty');
     }
 
+    public function updatePropertyView($id){
+        return view('property.updateProperty', compact('id'));
+    }
+
+    public function updateProperty(Request $request, $id){
+        $this->validate(request(), [
+            'property_name' => 'nullable',
+            'area' => 'nullable',
+            'type' => 'nullable'
+        ]);
+
+        $property = Property::find($id);
+
+        $property->property_name = $request->name;
+        $property->area = $request->area;
+        $property->type = $request->type;
+
+        $property->save();
+
+        return redirect()->to('/update-property/{id}');
+    }
+
     public function store(Request $request){
         $request->validate([
             'name' => 'required',

@@ -91,7 +91,7 @@
 
         .gambar1 {
             position: absolute;
-            top: -365px;
+            top: -100px;
             right: -35px;
             width: 700px;
         }
@@ -160,7 +160,7 @@
             </div>
         </nav>
         <!-- <div class="gambar1"><img width="680" height="500" src="Decore.png"></div> -->
-        <img class="gambar1" src="/image/Decore.png" alt="">
+        <img class="gambar1" src="/image/cover.png" alt="">
         <img class="model" src="/image/Image.png" alt="">
     </div>
 

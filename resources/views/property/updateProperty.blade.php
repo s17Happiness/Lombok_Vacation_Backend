@@ -105,9 +105,9 @@
     <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div>
 
     <h6 style="color: gray; font-size: small;">Lombok Vacation Property</h6>
-    <h3><span class="head">Add Property</span></h3>
+    <h3><span class="head">Edit Property</span></h3>
     <div>
-        <form method="POST" action="{{ url('add-property') }}">
+        <form method="POST" action="{{ url('update-property/' . $id) }}">
             @csrf
             <label style="margin-left: 75px; margin-top: 35px; font-size: small; color: #181E4B;" for="pname">Nama Property</label>
             <br>
@@ -133,7 +133,7 @@
                 <option value="cottage">Cottage</option>
             </select>
             <br>
-            <a href=""><button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Tambah</button></a>
+            <a href=""><button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Edit</button></a>
         </form>
     </div>
 

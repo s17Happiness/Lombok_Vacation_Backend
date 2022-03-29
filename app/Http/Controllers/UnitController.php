@@ -38,4 +38,32 @@ class UnitController extends Controller
 
         return redirect('property/' . $id . '/add-unit');
     }
+
+    public function updateUnitView($id, $unit_id){
+        return view('unit.updateUnit', compact('id', 'unit_id'));
+    }
+
+    public function updateUnit(Request $request, $id, $unit_id){
+        $this->validate(request(), [
+            'unit_name' => 'nullable',
+            'unit_picture' => 'nullable',
+            'unit_description' => 'nullable',
+            'total_unit' => 'nullable',
+            'price' => 'nullable'
+        ]);
+
+        Unit::where('property_id', $id)
+        ->where('id', $unit_id)
+        ->update(
+            ['unit_name'=>$request->name,
+            'unit_description'=>$request->desc,
+            'total_unit'=>$request->total_unit,
+            'price'=>$request->price,
+            'unit_picture'=>$request->filename
+        ]);
+
+        return redirect()->to('/property/{id}/update-unit/{unit_id}');
+    }
+
+
 }

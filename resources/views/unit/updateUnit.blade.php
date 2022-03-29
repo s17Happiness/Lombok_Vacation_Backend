@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="addunit.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,8 +33,8 @@
         }
 
         .btn {
-            margin-left: 76px;
-            margin-top: 30px;
+            margin-left: 73px;
+            margin-top: 20px;
             width: 90px;
             height: 40px;
         }
@@ -81,7 +82,7 @@
 </head>
 
 <body>
-    <img class="Logo" src="image/logo2revisi.png" alt="">
+    <img class="Logo" src="/image/logo2revisi.png" alt="">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,44 +97,36 @@
                 </div>
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link active" href="{{ url('update-profile') }}"><i class="glyphicon glyphicon-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>
-
                 </div>
             </div>
         </div>
-        </div>
     </nav>
-    <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div>
+    <div class="gambar1"><img width="550" height="550" src="/image/Decore-property.png"></div>
 
-    <h6 style="color: gray; font-size: small;">Lombok Vacation Property</h6>
-    <h3><span class="head">Add Property</span></h3>
+    <h6 style="color: gray; font-size: small;">Lombok Vacation Property Unit</h6>
+    <h3><span class="head">Edit Unit</span></h3>
     <div>
-        <form method="POST" action="{{ url('add-property') }}">
+        <form action="{{ url('property/' . $id . '/update-unit' . '/' . $unit_id) }}" method="POST">
             @csrf
-            <label style="margin-left: 75px; margin-top: 35px; font-size: small; color: #181E4B;" for="pname">Nama Property</label>
+            <label style="margin-left: 75px; margin-top: 5px; font-size: small; color: #181E4B;" for="uname">Nama Unit</label>
             <br>
-            <input style="height:50px; width:500px; margin-left: 75px;" type="text" id="pname" name="name" placeholder="Masukkan nama property...">
+            <input style="height:40px; width:500px; margin-left: 75px;" type="text" id="uname" name="name" placeholder="Masukkan nama unit...">
             <br>
-            <label style="margin-left: 75px; margin-top: 10px; font-size: small; color: #181E4B;" for="area">Pilih Area</label>
+            <label style="margin-left: 75px; margin-top: 0px; font-size: small; color: #181E4B;" for="tunit">Jumlah Unit</label>
             <br>
-            <select style="height:50px; width:500px; margin-left: 75px;" id="area" name="area">
-                <option value="lombok barat">Lombok Barat</option>
-                <option value="lombok utara">Lombok Utara</option>
-                <option value="lombok timur">Lombok Timur</option>
-                <option value="mataram">Kota Mataram</option>
-                <option value="lombok tengah">Lombok Tengah</option>
-                <option value="gili">Gili</option>
-            </select>
+            <input style="height:40px; width:500px; margin-left: 75px;" type="text" id="tunit" name="total_unit" placeholder="Masukkan jumlah unit...">
             <br>
-            <label style="margin-left: 75px; margin-top: 20px; font-size: small; color: #181E4B;" for="type">Pilih Type</label>
+            <label style="margin-left: 75px; margin-top: 0px; font-size: small; color: #181E4B;" for="price">Harga</label>
             <br>
-            <select style="height:50px; width:500px; margin-left: 75px;" id="type" name="type">
-                <option value="villa">Villa</option>
-                <option value="hotel">Hotel</option>
-                <option value="guest_house">Guest House</option>
-                <option value="cottage">Cottage</option>
-            </select>
+            <input style="height:40px; width:500px; margin-left: 75px;" type="text" id="price" name="price" placeholder="Masukkan harga unit...">
             <br>
-            <a href=""><button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Tambah</button></a>
+            <label style="margin-left: 75px; margin-top: 0px; font-size: small; color: #181E4B;" for="price">Deskripsi Unit</label>
+            <br>
+            <input style="height:40px; width:500px; margin-left: 75px;" type="text" id="desc" name="desc" placeholder="Tambahkan deskripsi unit...">
+            <br>
+            <label style="margin-left: 75px; margin-top: 0px; font-size: small; color: #181E4B;" for="pict">Foto Unit</label>
+            <input style="margin-left: 75px; margin-top: 5px;" type="file" id="myFile" name="filename">
+            <button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Edit</button>
         </form>
     </div>
 

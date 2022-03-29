@@ -35,4 +35,26 @@ class UserController extends Controller
 
         return redirect()->to('/add-property');
     }
+
+    public function updateProfileView(){
+        return view('updateProfile');
+    }
+
+    public function updateProfile(Request $request){
+        $this->validate(request(), [
+            'name' => 'nullable',
+            'email' => 'nullable',
+            'no_hp' => 'nullable'
+        ]);
+
+        $user = User::find($request->user()->id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->no_hp = $request->no_hp;
+
+        $user->save();
+
+        return redirect()->to('/update-profile');
+    }
 }
