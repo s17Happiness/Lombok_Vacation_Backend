@@ -57,15 +57,20 @@ class PropertyController extends Controller
     }
 
     public function guesthouseView(){
-        return view('property.guesthouse');
+        $results = Property::all()->where('type', '=', 'guest_house');
+        return view('property.guesthouse', compact('results'));
     }
     public function villaView(){
-        return view('property.villa');
+        $results = Property::all()->where('type', '=', 'villa');
+        return view('property.villa', compact('results'));
     }
+
     public function hotelView(){
-        return view('property.hotel');
+        $results = Property::all()->where('type', '=', 'hotel');
+        return view('property.hotel', compact('results'));
     }
     public function cottageView(){
-        return view('property.cottage');
+        $results = Property::all()->where('type', '=', 'cottage');
+        return view('property.cottage', compact('results'));
     }
 }
