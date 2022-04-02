@@ -22,6 +22,7 @@ Route::get('/', [LandingPageController::class,"logo"]);
 Route::get('/login', [LandingPageController::class,"loginButton"]);
 Route::get('/register', [LandingPageController::class,"registerButton"]);
 
+Route::get('/dashboard', [UserController::class,"dashboardView"]);
 Route::get('/update-profile', [UserController::class,"updateProfileView"]);
 Route::post('/update-profile', [UserController::class,"updateProfile"]);
 Route::post('/register', [UserController::class,"store"]);
@@ -31,6 +32,11 @@ Route::get('/add-property', [PropertyController::class,"view"]);
 Route::post('/add-property', [PropertyController::class,"store"]);
 Route::get('/update-property/{id}', [PropertyController::class,"updatePropertyView"]);
 Route::post('/update-property/{id}', [PropertyController::class,"updateProperty"]);
+
+Route::get('/guest-house', [PropertyController::class,"guesthouseView"]);
+Route::get('/villa', [PropertyController::class,"villaView"]);
+Route::get('/hotel', [PropertyController::class,"hotelView"]);
+Route::get('/cottage', [PropertyController::class,"cottageView"]);
 
 Route::get('/property/{id}/add-unit', [UnitController::class,"view"]);
 Route::post('/property/{id}/add-unit', [UnitController::class,"store"]);

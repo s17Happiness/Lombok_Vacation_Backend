@@ -1,0 +1,155 @@
+.Logo {
+    position: absolute;
+    width: 150px;
+    left: -30px;
+    top: -20px;
+}
+
+.show {
+    color: #5E6282;
+    position: relative;
+    font-size: 15px;
+    top: 90px;
+    left: 100px;
+}
+
+.entry {
+    color: #5E6282;
+    position: relative;
+    font-size: 15px;
+    top: 34px;
+    left: 200px;
+}
+
+.title {
+    color: #5E6282;
+    position: relative;
+    font-size: 15px;
+    top: 70px;
+    left: 98px;
+}
+
+.head{
+    color: #181E4B;
+    position: relative;
+    font-size: 50px;
+    top: 70px;
+    left: 97px;
+}
+
+.form-control{
+    width: 150px;
+    height: 30px;
+    position: relative;
+    top: 50px;
+    left: 1020px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+.btn{
+    position: relative;
+    left: 100px;
+    top: 90px;
+    width: 80px;
+    height: 35px;
+    background-color: #F1A501;
+    color: 000000;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #212832;
+}
+
+.navbar-light .navbar-nav {
+    margin-top: -600px;
+    margin-left: 425px;
+    z-index: 9;
+}
+
+.gambar1 {
+    position: absolute;
+    top: -365px;
+    right: -35px;
+    width: 700px;
+}
+
+.quotes {
+    position: absolute;
+    top: 540px;
+    right: 500px;
+    width: 250px;
+    z-index:1;
+}
+
+/* .select {
+    width: 50px;
+} */
+
+table {
+    width: 1070px;
+    border-collapse: collapse;
+    position: absolute;
+    margin-top:-50px;
+    margin-left:100px;
+    z-index:1;
+}
+
+.header_fixed {
+    /* max-height: 100vh; */
+    width: 100%;
+    overflow: auto;
+    z-index:1;
+}
+
+.header_fixed thead th {
+    position: relative;
+    top: 0;
+    background-color: #181E4B;
+    color: #e6e7e8;
+    font-size: 14px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #dddddd;
+    padding: 11px 15px;
+    font-size: 12px;
+}
+
+table, th, td {
+    border: 1px solid #5E6282;
+    border-collapse: collapse;
+  }
+
+td img {
+    height: 100px;
+    width: 100px;
+    border-radius: 15%;
+    border: 1px solid #e6e7e8;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #edeef1;
+}
+
+tr:hover td {
+    color: #44b478;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+/* ::-webkit-scrollbar {
+    width: 6px;
+} */
