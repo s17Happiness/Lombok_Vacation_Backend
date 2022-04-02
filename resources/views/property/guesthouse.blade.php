@@ -76,34 +76,22 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Gambar</th>
-                    <th>Nama Guest House</th>
-                    <th>Deskripsi</th>
-                    <th>Jumlah</th>
+                    <th>Nama</th>
+                    <th>Area</th>
+                    <th>Type</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><img src=asset/picture1.png /></td>
-                    <td>Guest House Bunga Sepatu</td>
-                    <td>Guest House Bunga Sepatu Terletak di Daerah Lombok</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><img src=asset/picture2.jpg /></td>
-                    <td>Guest House Bunga Mawar</td>
-                    <td>Guest House Bunga Mawar Terletak di Daerah Gili Trawangan</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><img src=asset/picture3.jpg /></td>
-                    <td>Guest House Bunga Anggrek</td>
-                    <td>Guest House Bunga Mawar Terletak di Daerah Gili Labak</td>
-                    <td>5</td>
-                </tr>
+                @foreach ($results as $key => $result)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $result->property_name }}</td>
+                        <td>{{ $result->area }}</td>
+                        <td>{{ $result->type }}</td>
+                        <td>Detail, edit</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
