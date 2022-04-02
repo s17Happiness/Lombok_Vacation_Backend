@@ -1,0 +1,126 @@
+.Logo {
+    position: absolute;
+    width: 150px;
+    left: -30px;
+    top: -20px;
+}
+
+.title {
+    color: #5E6282;
+    position: relative;
+    font-size: 15px;
+    top: 70px;
+    left: 100px;
+}
+
+.head{
+    color: #181E4B;
+    position: relative;
+    font-size: 50px;
+    top: 70px;
+    left: 97px;
+}
+
+/* .form-control{
+    background-color: #FFFF;
+    width: 347px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+    left: 130px;
+    border-radius: 8px;
+} */
+
+/* .form-control::placeholder {
+    color: #B0B0B0;
+} */
+
+.btn:hover{
+    color: #fff;
+}
+
+/* .btn{
+    position: relative;
+    left: 15px;
+    top: 150px;
+    width: 130px;
+    height: 50px;
+    background-color: #F1A501;
+    color: white;
+} */
+
+/* .sandi{
+    position: relative;
+    top: 200px;
+    left: 300px;
+    color: #029BC5;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.Daftar{
+    position: relative;
+    top: 145px;
+    left: 300px;
+    color: #B0B0B0;
+    font-size: 13px;
+    text-decoration: none;
+} */
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #212832;
+}
+
+.navbar-light .navbar-nav {
+    margin-top: -450px;
+    margin-left: 425px;
+    z-index: 9;
+}
+
+.DashboardList {
+    position: absolute;
+    width: 300px;
+    left: 170px;
+    top: 110px;
+    z-index:1;
+}
+
+.DashboardList2 {
+    position: absolute;
+    width: 300px;
+    left: 390px;
+    top: 80px;
+    z-index:1;
+}
+
+.DashboardList3 {
+    position: absolute;
+    width: 300px;
+    left: 610px;
+    top: 48px;
+    z-index:1;
+}
+
+.DashboardList4 {
+    position: absolute;
+    width: 300px;
+    left: 830px;
+    top: 18px;
+    z-index:1;
+}
+
+.gambar1 {
+    position: absolute;
+    top: -365px;
+    right: -35px;
+    width: 700px;
+}
+
+.quotes {
+    position: absolute;
+    top: 540px;
+    right: 500px;
+    width: 250px;
+    z-index:1;
+}

@@ -89,10 +89,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" href="#">Villa</a>
-                    <a class="nav-link active" href="#">Hotel</a>
-                    <a class="nav-link active" href="#">Cottage</a>
-                    <a class="nav-link active" href="#">Guest House</a>
+                    <a class="nav-link active" href="{{ url('dashboard') }}">Dashboard</a>
+                    <a class="nav-link active" href="{{ url('villa') }}">Villa</a>
+                    <a class="nav-link active" href="{{ url('hotel') }}">Hotel</a>
+                    <a class="nav-link active" href="{{ url('cottage') }}">Cottage</a>
+                    <a class="nav-link active" href="{{ url('guest-house') }}">Guest House</a>
+
                 </div>
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link active" href="{{ url('update-profile') }}"><i class="glyphicon glyphicon-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>

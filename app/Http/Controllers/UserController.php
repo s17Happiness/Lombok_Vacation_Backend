@@ -40,6 +40,10 @@ class UserController extends Controller
         return view('updateProfile');
     }
 
+    public function dashboardView(){
+        return view('dashboard');
+    }
+
     public function updateProfile(Request $request){
         $this->validate(request(), [
             'name' => 'nullable',

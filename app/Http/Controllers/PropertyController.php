@@ -55,4 +55,17 @@ class PropertyController extends Controller
 
         return redirect('/add-property');
     }
+
+    public function guesthouseView(){
+        return view('property.guesthouse');
+    }
+    public function villaView(){
+        return view('property.villa');
+    }
+    public function hotelView(){
+        return view('property.hotel');
+    }
+    public function cottageView(){
+        return view('property.cottage');
+    }
 }
