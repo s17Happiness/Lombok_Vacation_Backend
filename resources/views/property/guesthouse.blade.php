@@ -79,6 +79,7 @@
                     <th>Nama</th>
                     <th>Area</th>
                     <th>Type</th>
+                    <th>Tanggal dibuat</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -89,6 +90,7 @@
                         <td>{{ $result->property_name }}</td>
                         <td>{{ $result->area }}</td>
                         <td>{{ $result->type }}</td>
+                        <td>{{ $result->created_at }}</td>
                         <td>Detail, edit</td>
                     </tr>
                 @endforeach
