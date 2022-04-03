@@ -29,7 +29,7 @@
     left: 98px;
 }
 
-.head{
+.head {
     color: #181E4B;
     position: relative;
     font-size: 50px;
@@ -37,24 +37,24 @@
     left: 97px;
 }
 
-.form-control{
-    width: 150px;
+.form-control {
+    width: 120px;
     height: 30px;
     position: relative;
-    top: 50px;
-    left: 1020px;
+    top: 10px;
+    left: 800px;
     border-radius: 5px;
     z-index: 1;
 }
 
-.btn:hover{
+.btn:hover {
     color: #fff;
 }
 
-.btn{
+.btn-tambah {
     position: relative;
     left: 100px;
-    top: 90px;
+    top: 70px;
     width: 80px;
     height: 35px;
     background-color: #F1A501;
@@ -63,15 +63,19 @@
     font-size: 13px;
 }
 
-.navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link.active {
+    color: black;
     font-weight: bold;
-    color: #212832;
+    font-family: serif;
+    margin-left: 35px;
+    margin-top: 10px;
+    z-index: 9;
+    font-size: medium;
 }
 
-.navbar-light .navbar-nav {
-    margin-top: -600px;
-    margin-left: 425px;
-    z-index: 9;
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color: rgb(163, 159, 159);
+    text-decoration: none;
 }
 
 .gambar1 {
@@ -86,8 +90,9 @@
     top: 540px;
     right: 500px;
     width: 250px;
-    z-index:1;
+    z-index: 1;
 }
+
 
 /* .select {
     width: 50px;
@@ -97,17 +102,16 @@ table {
     width: 1070px;
     border-collapse: collapse;
     position: absolute;
-    margin-top:-50px;
-    margin-left:100px;
-    z-index:1;
+    margin-top: 10px;
+    margin-left: 100px;
+    z-index: 1;
 }
 
 .header_fixed {
     /* max-height: 100vh; */
     width: 100%;
     overflow: auto;
-    border: 0px solid #dddddd;
-    z-index:1;
+    z-index: 1;
 }
 
 .header_fixed thead th {
@@ -125,10 +129,12 @@ td {
     font-size: 12px;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #5E6282;
     border-collapse: collapse;
-  }
+}
 
 td img {
     height: 100px;
@@ -150,6 +156,7 @@ tr:hover td {
     cursor: pointer;
     background-color: #ffffff;
 }
+
 
 /* ::-webkit-scrollbar {
     width: 6px;

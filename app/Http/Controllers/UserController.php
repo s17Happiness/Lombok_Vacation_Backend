@@ -37,11 +37,13 @@ class UserController extends Controller
     }
 
     public function updateProfileView(){
-        return view('updateProfile');
+        $title = "Edit Profile";
+        return view('updateProfile', compact('title'));
     }
 
     public function dashboardView(){
-        return view('dashboard');
+        $title = "Dashboard";
+        return view('dashboard',compact('title'));
     }
 
     public function updateProfile(Request $request){

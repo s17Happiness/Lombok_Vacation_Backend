@@ -9,17 +9,18 @@
     color: #5E6282;
     position: relative;
     font-size: 15px;
-    top: 70px;
+    top: 10px;
     left: 100px;
 }
 
-.head{
+.head {
     color: #181E4B;
     position: relative;
     font-size: 50px;
-    top: 70px;
+    top: 20px;
     left: 97px;
 }
+
 
 /* .form-control{
     background-color: #FFFF;
@@ -31,13 +32,15 @@
     border-radius: 8px;
 } */
 
+
 /* .form-control::placeholder {
     color: #B0B0B0;
 } */
 
-.btn:hover{
+.btn:hover {
     color: #fff;
 }
+
 
 /* .btn{
     position: relative;
@@ -48,6 +51,7 @@
     background-color: #F1A501;
     color: white;
 } */
+
 
 /* .sandi{
     position: relative;
@@ -67,15 +71,19 @@
     text-decoration: none;
 } */
 
-.navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link.active {
+    color: black;
     font-weight: bold;
-    color: #212832;
+    font-family: serif;
+    margin-left: 35px;
+    margin-top: 10px;
+    z-index: 9;
+    font-size: medium;
 }
 
-.navbar-light .navbar-nav {
-    margin-top: -450px;
-    margin-left: 425px;
-    z-index: 9;
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color: rgb(163, 159, 159);
+    text-decoration: none;
 }
 
 .DashboardList {
@@ -83,7 +91,7 @@
     width: 300px;
     left: 170px;
     top: 110px;
-    z-index:1;
+    z-index: 1;
 }
 
 .DashboardList2 {
@@ -91,7 +99,7 @@
     width: 300px;
     left: 390px;
     top: 80px;
-    z-index:1;
+    z-index: 1;
 }
 
 .DashboardList3 {
@@ -99,7 +107,7 @@
     width: 300px;
     left: 610px;
     top: 48px;
-    z-index:1;
+    z-index: 1;
 }
 
 .DashboardList4 {
@@ -107,7 +115,7 @@
     width: 300px;
     left: 830px;
     top: 18px;
-    z-index:1;
+    z-index: 1;
 }
 
 .gambar1 {
@@ -119,8 +127,8 @@
 
 .quotes {
     position: absolute;
-    top: 540px;
+    top: 620px;
     right: 500px;
     width: 250px;
-    z-index:1;
+    z-index: 1;
 }

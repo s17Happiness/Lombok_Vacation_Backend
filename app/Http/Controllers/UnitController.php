@@ -8,7 +8,8 @@ use App\Models\Unit;
 class UnitController extends Controller
 {
     public function view($id){
-        return view('unit.addUnit', compact('id'));
+        $title = "Add Unit";
+        return view('unit.addUnit', compact('id','title'));
     }
 
     public function store(Request $request, $id){
@@ -40,7 +41,8 @@ class UnitController extends Controller
     }
 
     public function updateUnitView($id, $unit_id){
-        return view('unit.updateUnit', compact('id', 'unit_id'));
+        $title = "Edit Unit";
+        return view('unit.updateUnit', compact('id', 'unit_id','title'));
     }
 
     public function updateUnit(Request $request, $id, $unit_id){

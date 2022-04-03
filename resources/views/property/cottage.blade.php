@@ -1,33 +1,13 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/List_cottage.css">
-    <title>ABP PROJECT</title>
-</head>
-
-<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/List_cottage.css">
+@extends("layout.main")
+@section('content')
     <div class="row">
-        <img class="Logo" src="/image/logo2revisi.png" alt="">
-        <h3><span class="title">Lombok Vacation Cottage List</span></h3>
-        <h3><span class="head">Cottage List</span></h3>
-        <a href=""><button type="submit" class="btn">Tambah</button></a>
-        <h1><span class="show">Show</span></h1>
-        <h1><span class="entry">entries</span></h1>
-
-        <form>
-            <div class="mb-2">
-                <input type="cari" class="form-control" id="myInput" placeholder="Cari">
-            </div>
-        </form>
-
+        <h3><span class="title">Lombok Vacation</span></h3>
+        <h3><span class="head">{{$title}}</span></h3>
+        <a href=""><button type="submit" class="btn-tambah">Tambah</button></a>
         <div class="select">
+            <h1><span class="show">Show</span></h1>
             <select name="format" id="format">
                 <option selected disabled>10</option>
                 <option value="#10">10</option>
@@ -35,11 +15,18 @@
                 <option value="#30">30</option>
                 <option value="#40">40</option>
             </select>
+            <h1><span class="entry">entries</span></h1>
         </div>
+        <form>
+            <div class="col-sm-3 mb-2">
+                <input type="cari" class="form-control" id="myInput" placeholder="Cari">
+            </div>
+        </form>
+
     </div>
 
     <img class="gambar1" src="/image/Decore.png" alt="">
-
+{{-- 
     <div class="col-md-6" id="kol2">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -67,9 +54,8 @@
                     </ul>
                 </div>
             </div>
-    </div>
-    </nav>
-    </div>
+        </nav>
+    </div> --}}
 
     <div class="header_fixed">
         <table>
@@ -98,24 +84,4 @@
         </table>
     </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myInput")
-            var y = document.getElementById("hide1")
-            var z = document.getElementById("hide2")
-            if (x.type == "password") {
-                x.type = "text";
-                y.style.display = "inline"
-                z.style.display = "none"
-            } else {
-                x.type = "password";
-                y.style.display = "none"
-                z.style.display = "inline"
-            }
-        }
-    </script>
-</body>
-
-</html>
+@endsection

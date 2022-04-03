@@ -8,11 +8,13 @@ use App\Models\Property;
 class PropertyController extends Controller
 {
     public function view(){
-        return view('property.addProperty');
+        $title ="Add Property";
+        return view('property.addProperty',compact('title'));
     }
 
     public function updatePropertyView($id){
-        return view('property.updateProperty', compact('id'));
+        $title ="Edit Property";
+        return view('property.updateProperty', compact('id','title'));
     }
 
     public function updateProperty(Request $request, $id){
@@ -58,19 +60,23 @@ class PropertyController extends Controller
 
     public function guesthouseView(){
         $results = Property::all()->where('type', '=', 'guest_house');
-        return view('property.guesthouse', compact('results'));
+        $title = "Guest House List";
+        return view('property.guesthouse', compact('results','title'));
     }
     public function villaView(){
         $results = Property::all()->where('type', '=', 'villa');
-        return view('property.villa', compact('results'));
+        $title = "Villa List";
+        return view('property.villa', compact('results','title'));
     }
 
     public function hotelView(){
         $results = Property::all()->where('type', '=', 'hotel');
-        return view('property.hotel', compact('results'));
+        $title = "Hotel List";
+        return view('property.hotel', compact('results','title'));
     }
     public function cottageView(){
         $results = Property::all()->where('type', '=', 'cottage');
-        return view('property.cottage', compact('results'));
+        $title = "Cottage List";
+        return view('property.cottage', compact('results','title'));
     }
 }
