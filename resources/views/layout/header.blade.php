@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,6 +11,7 @@
     <title>ABP PROJECT</title>
     @stack('scripts')
 </head>
+
 <body>
     <div id="app">
         <div class="main-wrapper">
@@ -33,6 +35,6 @@
                         </div>
                     </div>
                 </div>
-                </div>
-            </nav>
-            {{-- <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div> --}}
+        </div>
+        </nav>
+        {{-- <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div> --}}

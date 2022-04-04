@@ -4,8 +4,8 @@
 @section('content')
     <div class="row">
         <h3><span class="title">Lombok Vacation</span></h3>
-        <h3><span class="head">{{$title}}</span></h3>
-        <a href=""><button type="submit" class="btn-tambah">Tambah</button></a>
+        <h3><span class="head">{{ $title }}</span></h3>
+        <a href="{{ url('add-property') }}"><button type="submit" class="btn-tambah">Tambah</button></a>
         <div class="select">
             <h1><span class="show">Show</span></h1>
             <select name="format" id="format">
@@ -26,36 +26,6 @@
     </div>
 
     <img class="gambar1" src="/image/Decore.png" alt="">
-{{-- 
-    <div class="col-md-6" id="kol2">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Villa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hotel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Cottage</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">GuestHouse</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div> --}}
 
     <div class="header_fixed">
         <table>
@@ -77,11 +47,18 @@
                         <td>{{ $result->area }}</td>
                         <td>{{ $result->type }}</td>
                         <td>{{ $result->created_at }}</td>
-                        <td>Detail, edit</td>
+                        <td>
+                            <form action="{{ url('property/' . $key + 1) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <a href=""><button type="button" class="btn1 btn-warning"><i class="fa-solid fa-info"></i></button></a>
+                                <a href="{{ url('update-property/' . $key + 1) }}"><button type="button" class="btn1 btn-success"><i class="fas fa-edit"></i></button></a>
+                                <button type="submit" class="btn1 btn-danger"><i class="far fa-trash-alt"></i></button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-
 @endsection

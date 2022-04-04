@@ -16,7 +16,7 @@ class UserController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/add-property')
+            return redirect()->intended('/dashboard')
                         ->withSuccess('Signed in');
         }
 
@@ -33,7 +33,7 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect()->to('/add-property');
+        return redirect()->to('/dashboard');
     }
 
     public function updateProfileView(){
