@@ -32,6 +32,7 @@ Route::get('/add-property', [PropertyController::class,"view"]);
 Route::post('/add-property', [PropertyController::class,"store"]);
 Route::get('/update-property/{id}', [PropertyController::class,"updatePropertyView"]);
 Route::post('/update-property/{id}', [PropertyController::class,"updateProperty"]);
+Route::delete('property/{id}',[PropertyController::class,"destroy"]);
 
 Route::get('/guest-house', [PropertyController::class,"guesthouseView"]);
 Route::get('/villa', [PropertyController::class,"villaView"]);

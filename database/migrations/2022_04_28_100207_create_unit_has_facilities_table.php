@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('unit_has_facilities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('unit_id')->constrained('unit');
-            $table->foreignId('facility_id')->constrained('unit_facilities');
+            $table->foreignId('unit_id')->constrained('unit')->onDelete('cascade');;
+            $table->foreignId('facility_id')->constrained('unit_facilities')->onDelete('cascade');;
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ class PropertyController extends Controller
 
     public function updatePropertyView($id){
         $title ="Edit Property";
-        return view('property.updateProperty', compact('id','title'));
+        $property = Property::find($id);
+        return view('property.updateProperty', compact('id','title', 'property'));
     }
 
     public function updateProperty(Request $request, $id){
@@ -32,7 +33,7 @@ class PropertyController extends Controller
 
         $property->save();
 
-        return redirect()->to('/update-property/{id}');
+        return redirect()->to('/villa');
     }
 
     public function store(Request $request){
@@ -78,5 +79,14 @@ class PropertyController extends Controller
         $results = Property::all()->where('type', '=', 'cottage');
         $title = "Cottage List";
         return view('property.cottage', compact('results','title'));
+    }
+
+    public function destroy($id)
+    {
+        $property = Property::find($id);
+
+        $property->forceDelete();
+
+        return redirect()->back();
     }
 }
