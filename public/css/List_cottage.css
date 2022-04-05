@@ -9,7 +9,7 @@
     color: #5E6282;
     position: relative;
     font-size: 15px;
-    top: 90px;
+    top: 70px;
     left: 100px;
 }
 
@@ -17,7 +17,7 @@
     color: #5E6282;
     position: relative;
     font-size: 15px;
-    top: 34px;
+    top: 13px;
     left: 200px;
 }
 
@@ -38,10 +38,10 @@
 }
 
 .form-control {
-    width: 120px;
+    width: 300px;
     height: 30px;
     position: relative;
-    top: 10px;
+    top: -40px;
     left: 800px;
     border-radius: 5px;
     z-index: 1;
@@ -102,7 +102,7 @@ table {
     width: 1070px;
     border-collapse: collapse;
     position: absolute;
-    margin-top: 10px;
+    margin-top: -30px;
     margin-left: 100px;
     z-index: 1;
 }
@@ -157,7 +157,7 @@ tr:hover td {
     background-color: #ffffff;
 }
 
-.btn{
+.btn {
     position: relative;
     left: 100px;
     top: 90px;

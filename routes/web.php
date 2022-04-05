@@ -44,6 +44,7 @@ Route::get('/property/{id}/add-unit', [UnitController::class,"view"]);
 Route::post('/property/{id}/add-unit', [UnitController::class,"store"]);
 Route::get('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updateUnitView"]);
 Route::post('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updateUnit"]);
+Route::delete('/property/{id}/update-unit/{unit_id}',[UnitController::class,"destroy"]);
 
 
 

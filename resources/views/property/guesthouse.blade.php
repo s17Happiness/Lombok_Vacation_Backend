@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/List_guesthouse.css">
+@push('styles')
+   <link rel="stylesheet" href={{asset('css/List_guesthouse.css')}}>
+@endpush
 @extends("layout.main")
 @section('content')
     <div class="row">
@@ -8,6 +9,7 @@
         <a href="{{ url('add-property') }}"><button type="submit" class="btn-tambah">Tambah</button></a>
         <div class="select">
             <h1><span class="show">Show</span></h1>
+            <h1><span class="entry">Entries</span></h1>
             <select name="format" id="format">
                 <option selected disabled>10</option>
                 <option value="#10">10</option>
@@ -15,10 +17,9 @@
                 <option value="#30">30</option>
                 <option value="#40">40</option>
             </select>
-            <h1><span class="entry">entries</span></h1>
         </div>
         <form>
-            <div class="col-sm-3 mb-2">
+            <div class="col-sm-3 mb-10">
                 <input type="cari" class="form-control" id="myInput" placeholder="Cari">
             </div>
         </form>

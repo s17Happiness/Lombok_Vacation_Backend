@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/add_unit.css">
+@push('styles')
+   <link rel="stylesheet" href={{asset('css/add_unit.css')}}>
+@endpush
 @extends("layout.main")
 @section('content')
 
@@ -28,6 +29,7 @@
             <br>
             <label style="margin-left: 75px; margin-top: 0px; font-size: small; color: #181E4B;" for="pict">Foto Unit</label>
             <input style="margin-left: 75px; margin-top: 5px;" type="file" id="myFile" name="filename">
+            <br>
             <button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Tambah</button>
         </form>
     </div>

@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="/css/update_property.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+@push('styles')
+   <link rel="stylesheet" href={{asset('css/update_property.css')}}>
+@endpush
 @extends("layout.main")
 @section('content')
     <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div>
