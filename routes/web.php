@@ -28,6 +28,7 @@ Route::post('/update-profile', [UserController::class,"updateProfile"]);
 Route::post('/register', [UserController::class,"store"]);
 Route::post('/login', [UserController::class,"login"]);
 
+Route::get('/property/{id}', [PropertyController::class,"propertyDetailView"]);
 Route::get('/add-property', [PropertyController::class,"view"]);
 Route::post('/add-property', [PropertyController::class,"store"]);
 Route::get('/update-property/{id}', [PropertyController::class,"updatePropertyView"]);

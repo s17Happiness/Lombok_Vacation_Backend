@@ -48,11 +48,11 @@
                         <td>{{ $result->type }}</td>
                         <td>{{ $result->created_at }}</td>
                         <td>
-                            <form action="{{ url('property/' . $key + 1) }}" method="POST">
+                            <form action="{{ url('property/' . $result->id) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <a href=""><button type="button" class="btn1 btn-warning"><i class="fa-solid fa-info"></i></button></a>
-                                <a href="{{ url('update-property/' . $key + 1) }}"><button type="button" class="btn1 btn-success"><i class="fas fa-edit"></i></button></a>
+                                <a href="{{ url('property/' . $result->id) }}"><button type="button" class="btn1 btn-warning"><i class="fa-solid fa-info"></i></button></a>
+                                <a href="{{ url('update-property/' . $result->id) }}"><button type="button" class="btn1 btn-success"><i class="fas fa-edit"></i></button></a>
                                 <button type="submit" class="btn1 btn-danger"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>

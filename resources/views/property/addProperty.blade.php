@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="/css/add_property.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  
+
 @extends("layout.main")
 @section('content')
     <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div>
     <h6 style="color: gray; font-size: small;">Lombok Vacation Property</h6>
-    <h3><span class="head">{{$title}}</span></h3>
+    <h3><span class="head">{{ $title }}</span></h3>
     <div style='margin-top: 30px'>
         <form method="POST" action="{{ url('add-property') }}">
             @csrf

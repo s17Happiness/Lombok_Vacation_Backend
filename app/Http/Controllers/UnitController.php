@@ -37,12 +37,13 @@ class UnitController extends Controller
             session()->flash('failed', 'Gagal Menambahkan');
         }
 
-        return redirect('property/' . $id . '/add-unit');
+        return redirect('property/' . $id);
     }
 
     public function updateUnitView($id, $unit_id){
         $title = "Edit Unit";
-        return view('unit.updateUnit', compact('id', 'unit_id','title'));
+        $unit = Unit::find($unit_id);
+        return view('unit.updateUnit', compact('id', 'unit_id','title', 'unit'));
     }
 
     public function updateUnit(Request $request, $id, $unit_id){
@@ -64,7 +65,7 @@ class UnitController extends Controller
             'unit_picture'=>$request->filename
         ]);
 
-        return redirect()->to('/property/{id}/update-unit/{unit_id}');
+        return redirect()->back();
     }
 
 
