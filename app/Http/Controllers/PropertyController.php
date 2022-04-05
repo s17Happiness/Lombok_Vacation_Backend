@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Property;
+use App\Models\Unit;
 
 class PropertyController extends Controller
 {
     public function view(){
         $title ="Add Property";
         return view('property.addProperty',compact('title'));
+    }
+
+    public function propertyDetailView($id){
+        $results = Unit::all()->where('property_id', '=', $id);
+        $title ="Lombok Vacation Property Detail";
+        $property = Property::find($id);
+        return view('property.propertyDetail', compact('id','title', 'property', 'results'));
     }
 
     public function updatePropertyView($id){
@@ -33,7 +41,7 @@ class PropertyController extends Controller
 
         $property->save();
 
-        return redirect()->to('/villa');
+        return redirect()->back();
     }
 
     public function store(Request $request){
@@ -56,7 +64,7 @@ class PropertyController extends Controller
             session()->flash('failed', 'Gagal Menambahkan');
         }
 
-        return redirect('/add-property');
+        return redirect()->back();
     }
 
     public function guesthouseView(){
@@ -64,6 +72,7 @@ class PropertyController extends Controller
         $title = "Guest House List";
         return view('property.guesthouse', compact('results','title'));
     }
+
     public function villaView(){
         $results = Property::all()->where('type', '=', 'villa');
         $title = "Villa List";
