@@ -5,7 +5,6 @@
 @extends("layout.main")
 @section('content')
     <div class="gambar1"><img width="550" height="600" src="/image/Decore-property.png"></div>
-
     <h6 style="color: gray; font-size: small;">Lombok Vacation Property</h6>
     <h3><span class="head">{{ $title }}</span></h3>
     <div>

@@ -7,7 +7,7 @@
         <h3><span class="title">Lombok Vacation</span></h3>
         <h3><span class="head">{{ $title }}</span></h3>
         <a href="{{ url('add-property') }}"><button type="submit" class="btn-tambah">Tambah</button></a>
-        <div class="select">
+        <!-- <div class="select">
             <h1><span class="show">Show</span></h1>
             <h1><span class="entry">Entries</span></h1>
             <select name="format" id="format">
@@ -22,7 +22,7 @@
             <div class="col-sm-3 mb-2">
                 <input type="cari" class="form-control" id="myInput" placeholder="Cari">
             </div>
-        </form>
+        </form> -->
 
     </div>
 

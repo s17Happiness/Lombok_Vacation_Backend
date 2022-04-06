@@ -74,7 +74,6 @@
 .navbar-light .navbar-nav .nav-link.active {
     color: black;
     font-weight: bold;
-    font-family: serif;
     margin-left: 35px;
     margin-top: 10px;
     z-index: 9;

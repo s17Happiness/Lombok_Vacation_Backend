@@ -4,7 +4,7 @@
 @extends("layout.main")
 @section('content')
     <div class="row">
-        <img class="Logo" src="image/logo2revisi.png" alt="">
+        <img class="Logo" src="./asset/logo2revisi.png" alt=""> 
         <h3><span class="title">Lombok Vacation Property Detail</span></h3>
         <h3><span class="head">{{ $property->property_name }}</span></h3>
         <h1><span class="content">Area : {{ $property->area }}</span></h1>
