@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <div class="main-wrapper">
-            <img class="Logo" src="image/logo2revisi.png" alt="">
+            <img class="Logo" src="{{asset('image/logo2revisi.png')}}" alt="">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

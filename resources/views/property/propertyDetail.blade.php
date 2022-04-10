@@ -4,7 +4,7 @@
 @extends("layout.main")
 @section('content')
     <div class="row">
-        <img class="Logo" src="./asset/logo2revisi.png" alt="">
+        {{-- <img class="Logo" src="./asset/logo2revisi.png" alt=""> --}}
         <h3><span class="title">Lombok Vacation Property Detail</span></h3>
         <h3><span class="head">{{ $property->property_name }}</span></h3>
         <h1><span class="content">Area : {{ $property->area }}</span></h1>
@@ -46,7 +46,10 @@
                                 @csrf
                                 <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-warning"><i class="fas fa-edit"></i></button></a>
                                 <button type="submit" class="btn1 btn-danger"><i class="far fa-trash-alt"></i></button>
-                                <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-success"><i class="fa-solid fa-plus"></i></button></a>
+                                {{-- <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-success"><i class="fa-solid fa-plus"></i></button></a> --}}
+                                <a href="#" id="tambahFacilities" class="btn btn-secondary mb-4"
+                                data-toggle="modal" data-target="#tambahModal">Tambah obat
+                             </a>
                             </form>
                         </td>
                     </tr>
@@ -62,4 +65,23 @@
             @endforeach
         </select>
     </div>
+    <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 @endsection
