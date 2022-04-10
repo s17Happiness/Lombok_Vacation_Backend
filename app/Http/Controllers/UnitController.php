@@ -68,9 +68,9 @@ class UnitController extends Controller
         return redirect()->back();
     }
 
-    public function destroy($id)
+    public function destroy($id,$result_id)
     {
-        $property = Unit::find($id);
+        $property = Unit::find($result_id);
 
         $property->forceDelete();
 
