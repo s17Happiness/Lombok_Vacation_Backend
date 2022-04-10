@@ -10,8 +10,6 @@
         <h1><span class="content">Area : {{ $property->area }}</span></h1>
         <h1><span class="content2">Tipe : {{ $property->type }}</span></h1>
         <a href="{{ url('/property' . '/' . $id . '/add-unit') }}"><button type="submit" class="btn">Tambah</button></a>
-        <!-- <h1><span class="show">Show</span></h1> -->
-        <!-- <h1><span class="entry">entries</span></h1> -->
 
         <form>
             <div class="mb-2">

@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="registrasi.css">
@@ -83,9 +81,6 @@
             position: absolute;
             top: 0px;
             right: 0px;
-            /* object-fit: cover;
-    width: 100%;
-    height: 250px;       */
         }
 
         .navbar-nav .nav-link {
@@ -98,14 +93,6 @@
             z-index: 9;
         }
 
-        /* .gambar1 {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: auto;
-    max-height: 100%;
-    height:200px
- } */
 
     </style>
 </head>
