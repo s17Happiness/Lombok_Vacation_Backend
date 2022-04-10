@@ -6,6 +6,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\UnitFacilitiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,8 @@ Route::post('/property/{id}/add-unit', [UnitController::class,"store"]);
 Route::get('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updateUnitView"]);
 Route::post('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updateUnit"]);
 Route::delete('/property/{id}/update-unit/{unit_id}',[UnitController::class,"destroy"]);
+
+Route::get('/{unit_id}/add-facilities/{facility_id}', [UnitFacilitiesController::class,"store"]);
 
 
 

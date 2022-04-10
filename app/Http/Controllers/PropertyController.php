@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Property;
 use App\Models\Unit;
+use App\Models\UnitFacilities;
 
 class PropertyController extends Controller
 {
@@ -17,7 +18,8 @@ class PropertyController extends Controller
         $results = Unit::all()->where('property_id', '=', $id);
         $title ="Lombok Vacation Property Detail";
         $property = Property::find($id);
-        return view('property.propertyDetail', compact('id','title', 'property', 'results'));
+        $facilities = UnitFacilities::all();
+        return view('property.propertyDetail', compact('id','title', 'property', 'results', 'facilities'));
     }
 
     public function updatePropertyView($id){
