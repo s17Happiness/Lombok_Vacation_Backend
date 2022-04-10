@@ -1,10 +1,10 @@
 @push('styles')
-   <link rel="stylesheet" href={{asset('css/Property_detail.css')}}>
+    <link rel="stylesheet" href={{ asset('css/Property_detail.css') }}>
 @endpush
 @extends("layout.main")
 @section('content')
     <div class="row">
-        <img class="Logo" src="./asset/logo2revisi.png" alt=""> 
+        <img class="Logo" src="./asset/logo2revisi.png" alt="">
         <h3><span class="title">Lombok Vacation Property Detail</span></h3>
         <h3><span class="head">{{ $property->property_name }}</span></h3>
         <h1><span class="content">Area : {{ $property->area }}</span></h1>
@@ -46,8 +46,9 @@
                             <form action="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-success"><i class="fas fa-edit"></i></button></a>
+                                <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-warning"><i class="fas fa-edit"></i></button></a>
                                 <button type="submit" class="btn1 btn-danger"><i class="far fa-trash-alt"></i></button>
+                                <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-success"><i class="fa-solid fa-plus"></i></button></a>
                             </form>
                         </td>
                     </tr>
@@ -56,4 +57,11 @@
         </table>
     </div>
 
+    <div>
+        <select name="cars" id="cars">
+            @foreach ($facilities as $key => $facility)
+                <option value="{{ $facility->facility_name }}">{{ $facility->facility_name }}</option>
+            @endforeach
+        </select>
+    </div>
 @endsection
