@@ -27,6 +27,9 @@
                             <a class="nav-link active" href="{{ url('hotel') }}">Hotel</a>
                             <a class="nav-link active" href="{{ url('cottage') }}">Cottage</a>
                             <a class="nav-link active" href="{{ url('guest-house') }}">Guest House</a>
+                            @if (auth()->user()->role == 'admin')
+                            <a class="nav-link active" href="{{ url('admin/kelola-user') }}">Kelola User</a>
+                            @endif
 
                         </div>
                         <div class="navbar-nav navbar-right">

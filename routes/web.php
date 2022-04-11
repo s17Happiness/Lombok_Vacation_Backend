@@ -49,5 +49,9 @@ Route::delete('/property/{id}/update-unit/{unit_id}',[UnitController::class,"des
 
 Route::get('/{unit_id}/add-facilities/{facility_id}', [UnitFacilitiesController::class,"store"]);
 
-Route::get('/autocomplete', [PropertyController::class, 'search']);
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::get('/kelola-user', [UserController::class, 'kelolaUserView']);
+    Route::resource('user', UserController::class);
+    Route::put('/kelola-user/role-update/{id}', [UserController::class, 'updateUser']);
+});
 

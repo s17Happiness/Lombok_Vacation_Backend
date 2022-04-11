@@ -68,10 +68,11 @@
     color: #fff;
 }
 
-.btn-tambah {
+
+/* .btn-tambah {
     position: relative;
     border-radius: 5px;
-    left: 100px;
+    left: 110px;
     top: 20px;
     width: 80px;
     height: 35px;
@@ -79,7 +80,7 @@
     color: 000000;
     font-weight: bold;
     font-size: 13px;
-}
+} */
 
 .navbar-light .navbar-nav .nav-link.active {
     color: black;
@@ -119,7 +120,7 @@ table {
     width: 1070px;
     border-collapse: collapse;
     position: absolute;
-    margin-top: 30px;
+    margin-top: 70px;
     margin-left: 100px;
     z-index: 1;
 }
@@ -207,10 +208,10 @@ tr:hover td {
 /* Modal Content/Box */
 
 .modal-content {
-    z-index: 1;
     background-color: #fefefe;
     margin: 15% auto;
     /* 15% from the top and centered */
+    z-index: 1;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;

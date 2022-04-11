@@ -9,13 +9,15 @@
         <h3><span class="head">{{ $property->property_name }}</span></h3>
         <h1><span class="content">Area : {{ $property->area }}</span></h1>
         <h1><span class="content2">Tipe : {{ $property->type }}</span></h1>
-        <a href="{{ url('/property' . '/' . $id . '/add-unit') }}"><button type="submit" class="btn">Tambah</button></a>
-
+        <a href="{{ url('/property' . '/' . $id . '/add-unit') }}">
+            <button type="submit" class="btn-tambah">Tambah</button>
+        </a>
+{{-- 
         <form>
             <div class="mb-2">
                 <input type="cari" class="form-control" id="myInput" placeholder="Cari">
             </div>
-        </form>
+        </form> --}}
 
         <div class="header_fixed table-responsive">
             <table>
@@ -58,30 +60,81 @@
     <img class="gambar1" src="/image/Decore.png" alt="">
 
 
-    <div>
+    {{-- <div>
         <select name="cars" id="cars">
             @foreach ($facilities as $key => $facility)
                 <option value="{{ $facility->facility_name }}">{{ $facility->facility_name }}</option>
             @endforeach
         </select>
-    </div>
-    <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    </div> --}}
+    <!-- The Modal -->
+    {{-- <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+  
+    </div> --}}
+    <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             </div>
             <div class="modal-body">
-              ...
+                <form action="POST">
+                    <div class="mb-3">
+                        <label for="fasilitas-tersedia" class="col-form-label">Fasilitas Tersedia:</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tambah-fasilitas" class="col-form-label">Tambah Fasilitas:</label>
+                        {{-- <div class="col-sm-5"> --}}
+                        <select class="form-select" name="cars" id="cars">
+                            @foreach ($facilities as $key => $facility)
+                                <option value="{{ $facility->facility_name }}">{{ $facility->facility_name }}</option>
+                            @endforeach
+                        </select>
+                        {{-- </div> --}}
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-success">Save changes</button>
             </div>
           </div>
         </div>
       </div>
+    {{-- @push('script')
+    <script >
+        $(document).ready(function () {
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // Get the button that opens the modal
+            var btn = document.getElementById("tambahFacilities");
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks on the button, open the modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+    @endpush --}}
 @endsection

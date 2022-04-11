@@ -45,6 +45,11 @@ class UserController extends Controller
         $title = "Dashboard";
         return view('dashboard',compact('title'));
     }
+    public function kelolaUserView(){
+        $results = User::all();
+        $title = "Kelola User";
+        return view('kelolaUser', compact('title','results'));
+    }
 
     public function updateProfile(Request $request){
         $this->validate(request(), [
@@ -62,5 +67,20 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->to('/update-profile');
+    }
+    public function updateUser(Request $request, $id){
+        $this->validate(request(),[
+            'role' => 'required',
+        ]);
+
+        $user = User::find($id);
+        $user->role = $request->role;
+        $user->save();
+        return redirect()->back();
+    }
+    public function show($id)
+    {
+        //
+        return User::find($id);
     }
 }
