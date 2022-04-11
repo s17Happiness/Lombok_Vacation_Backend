@@ -49,5 +49,5 @@ Route::delete('/property/{id}/update-unit/{unit_id}',[UnitController::class,"des
 
 Route::get('/{unit_id}/add-facilities/{facility_id}', [UnitFacilitiesController::class,"store"]);
 
-
+Route::get('/autocomplete', [PropertyController::class, 'search']);
 

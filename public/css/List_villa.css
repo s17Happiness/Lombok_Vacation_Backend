@@ -1,24 +1,18 @@
+.navbar {
+    background-color: #FFF1DA;
+}
+
+
+/* #content {
+    margin-top: 100px;
+} */
+
 .Logo {
     position: absolute;
+    z-index: 9;
     width: 150px;
     left: -30px;
     top: -20px;
-}
-
-.show {
-    color: #5E6282;
-    position: relative;
-    font-size: 15px;
-    top: 70px;
-    left: 100px;
-}
-
-.entry {
-    color: #5E6282;
-    position: relative;
-    font-size: 15px;
-    top: 13px;
-    left: 200px;
 }
 
 .title {
@@ -37,28 +31,18 @@
     left: 97px;
 }
 
-.form-control {
-    width: 300px;
-    height: 30px;
-    position: relative;
-    top: -40px;
-    left: 800px;
-    border-radius: 5px;
-    z-index: 1;
-}
-
 .btn:hover {
     color: #fff;
 }
 
 .btn-tambah {
     position: relative;
+    border-radius: 5px;
     left: 100px;
     top: 70px;
     width: 80px;
     height: 35px;
     background-color: #F1A501;
-    color: 000000;
     font-weight: bold;
     font-size: 13px;
 }
@@ -66,7 +50,6 @@
 .navbar-light .navbar-nav .nav-link.active {
     color: black;
     font-weight: bold;
-
     margin-left: 35px;
     margin-top: 10px;
     z-index: 9;
@@ -101,14 +84,13 @@
 table {
     width: 1070px;
     border-collapse: collapse;
-    position: absolute;
+    position: relative;
     margin-top: 90px;
     margin-left: 100px;
     z-index: 1;
 }
 
 .header_fixed {
-    /* max-height: 100vh; */
     width: 100%;
     overflow: auto;
     z-index: 1;
@@ -155,18 +137,6 @@ tr:hover td {
     color: #44b478;
     cursor: pointer;
     background-color: #ffffff;
-}
-
-.btn {
-    position: relative;
-    left: 100px;
-    top: 90px;
-    width: 80px;
-    height: 35px;
-    background-color: #F1A501;
-    color: 000000;
-    font-weight: bold;
-    font-size: 13px;
 }
 
 .btn1 {

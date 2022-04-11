@@ -14,8 +14,8 @@
 <body>
     <div id="app">
         <div class="main-wrapper">
-            <img class="Logo" src="{{asset('image/logo2revisi.png')}}" alt="">
-            <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+                <img class="Logo" src="{{asset('image/logo2revisi.png')}}" alt="">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@
                             <a class="nav-link active" href="{{ url('guest-house') }}">Guest House</a>
 
                         </div>
-                        <div class="navbar-nav ml-auto">
+                        <div class="navbar-nav navbar-right">
                             <a class="nav-link active" href="{{ url('update-profile') }}"><i class="fa-solid fa-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>
                         </div>
                     </div>

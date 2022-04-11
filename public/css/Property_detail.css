@@ -123,7 +123,7 @@
 table {
     width: 1070px;
     border-collapse: collapse;
-    position: absolute;
+    position: relative;
     margin-top: -10px;
     margin-left: 100px;
     z-index: 1;

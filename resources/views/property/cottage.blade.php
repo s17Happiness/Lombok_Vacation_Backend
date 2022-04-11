@@ -12,7 +12,7 @@
 
     <img class="gambar1" src="/image/Decore.png" alt="">
 
-    <div class="header_fixed">
+    <div class="header_fixed table-responsive">
         <table>
             <thead>
                 <tr>
@@ -45,5 +45,10 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div class="row">    
+        <div class="d-flex justify-content-center mt-3">
+            {!! $results->links() !!}
+        </div>
     </div>
 @endsection
