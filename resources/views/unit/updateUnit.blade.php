@@ -9,7 +9,8 @@
 
     <h6 style="color: gray; font-size: small;">Lombok Vacation Property Unit</h6>
     <h3><span class="head">{{ $title }}</span></h3>
-    <a href="#" id="tambahFacilities" data-toggle="modal" data-target="#tambahModal"><button type="button" class="btn1 btn-success"><i class="fa-solid fa-plus"></i></button></a>
+    <a href="#" id="tambahFacilities" data-toggle="modal" data-target="#tambahModal"><button type="button" class="btn1 btn-success" style="margin-left:70px">Tambah Unit Facility</button></a>
+
     <div>
         <form action="{{ url('property/' . $id . '/update-unit' . '/' . $unit_id) }}" method="POST">
             @csrf
@@ -31,7 +32,7 @@
             <br>
             <label style="margin-left: 75px; margin-top: 0px; font-size: small; color: #181E4B;" for="pict">Foto Unit</label>
             <input style="margin-left: 75px; margin-top: 5px;" type="file" id="myFile" name="filename">
-            <button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;">Edit</button>
+            <button type="submit" class="btn" style="background-color: #F1A501; border-radius: 8px; font-weight: bold;margin-top:50px">Edit</button>
         </form>
     </div>
 
