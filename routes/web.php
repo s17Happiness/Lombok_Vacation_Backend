@@ -47,7 +47,7 @@ Route::get('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updat
 Route::post('/property/{id}/update-unit/{unit_id}', [UnitController::class,"updateUnit"]);
 Route::delete('/property/{id}/update-unit/{unit_id}',[UnitController::class,"destroy"]);
 
-Route::get('/{unit_id}/add-facilities/{facility_id}', [UnitFacilitiesController::class,"store"]);
+Route::post('/property/{id}/{unit_id}/add-facilities', [UnitFacilitiesController::class,"store"]);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/kelola-user', [UserController::class, 'kelolaUserView']);
