@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Unit;
+use App\Models\UnitFacilities;
+use App\Models\UnitHasFacilities;
 
 class UnitController extends Controller
 {
@@ -43,7 +45,9 @@ class UnitController extends Controller
     public function updateUnitView($id, $unit_id){
         $title = "Edit Unit";
         $unit = Unit::find($unit_id);
-        return view('unit.updateUnit', compact('id', 'unit_id','title', 'unit'));
+        $facilities = UnitFacilities::all();
+        $unitHasFacilities = UnitHasFacilities::with('facility')->where('unit_id', '=', $unit_id)->get();
+        return view('unit.updateUnit', compact('id', 'unit_id','title', 'unit', 'facilities', 'unitHasFacilities'));
     }
 
     public function updateUnit(Request $request, $id, $unit_id){

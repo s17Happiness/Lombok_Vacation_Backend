@@ -12,8 +12,7 @@
         <a href="{{ url('/property' . '/' . $id . '/add-unit') }}">
             <button type="submit" class="btn-tambah">Tambah</button>
         </a>
-{{-- 
-        <form>
+        {{-- <form>
             <div class="mb-2">
                 <input type="cari" class="form-control" id="myInput" placeholder="Cari">
             </div>
@@ -75,59 +74,60 @@
             <span class="close">&times;</span>
             <p>Some text in the Modal..</p>
         </div>
-  
+
     </div> --}}
     <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Fasilitas</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="POST" action="{{ url('update-property/' . $id) }}">
+                        <div class="mb-3">
+                            <label for="fasilitas-tersedia" class="col-form-label">Fasilitas Tersedia:</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tambah-fasilitas" class="col-form-label">Tambah Fasilitas:</label>
+                            {{-- <div class="col-sm-5"> --}}
+                            <select class="form-select" name="cars" id="cars">
+                                @foreach ($facilities as $key => $facility)
+                                    <option value="{{ $facility->facility_name }}">{{ $facility->facility_name }}</option>
+                                @endforeach
+                            </select>
+                            {{-- </div> --}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
-            <div class="modal-body">
-                <form action="POST">
-                    <div class="mb-3">
-                        <label for="fasilitas-tersedia" class="col-form-label">Fasilitas Tersedia:</label>
-                    </div>
-                    <div class="mb-3">
-                        <label for="tambah-fasilitas" class="col-form-label">Tambah Fasilitas:</label>
-                        {{-- <div class="col-sm-5"> --}}
-                        <select class="form-select" name="cars" id="cars">
-                            @foreach ($facilities as $key => $facility)
-                                <option value="{{ $facility->facility_name }}">{{ $facility->facility_name }}</option>
-                            @endforeach
-                        </select>
-                        {{-- </div> --}}
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-success">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     {{-- @push('script')
     <script >
         $(document).ready(function () {
             // Get the modal
             var modal = document.getElementById("myModal");
-            
+
             // Get the button that opens the modal
             var btn = document.getElementById("tambahFacilities");
-            
+
             // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close")[0];
-            
+
             // When the user clicks on the button, open the modal
             btn.onclick = function() {
                 modal.style.display = "block";
             }
-            
+
             // When the user clicks on <span> (x), close the modal
             span.onclick = function() {
                 modal.style.display = "none";
             }
-            
+
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == modal) {
