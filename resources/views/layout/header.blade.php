@@ -33,7 +33,19 @@
 
                         </div>
                         <div class="navbar-nav navbar-right">
-                            <a class="nav-link active" href="{{ url('update-profile') }}"><i class="fa-solid fa-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a>
+                            {{-- <a class="nav-link active" href="{{ url('update-profile') }}"><i class="fa-solid fa-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a> --}}
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="nav-link active dropdown-toggle nav-link-lg nav-link-user"><i class="fa-solid fa-user"></i><span style="font-weight:normal">&nbsp;{{ auth()->user()->name }}</span></a></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="{{ url('update-profile') }}" class="dropdown-item has-icon">
+                                        <i class="far fa-user"></i> Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="{{ url('logout') }}" class="dropdown-item has-icon text-danger">
+                                        <i class="fas fa-sign-out-alt"></i> Logout
+                                    </a>
+                                </div>
+                            </li>
                         </div>
                     </div>
                 </div>

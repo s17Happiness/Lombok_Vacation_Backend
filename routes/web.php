@@ -22,12 +22,14 @@ use App\Http\Controllers\UnitFacilitiesController;
 Route::get('/', [LandingPageController::class,"logo"]);
 Route::get('/login', [LandingPageController::class,"loginButton"]);
 Route::get('/register', [LandingPageController::class,"registerButton"]);
+Route::get('/logout', [UserController::class, 'logout']);
 
 Route::get('/dashboard', [UserController::class,"dashboardView"]);
 Route::get('/update-profile', [UserController::class,"updateProfileView"]);
 Route::post('/update-profile', [UserController::class,"updateProfile"]);
 Route::post('/register', [UserController::class,"store"]);
 Route::post('/login', [UserController::class,"login"]);
+
 
 Route::get('/property/{id}', [PropertyController::class,"propertyDetailView"]);
 Route::get('/add-property', [PropertyController::class,"view"]);

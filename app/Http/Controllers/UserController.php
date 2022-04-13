@@ -83,4 +83,8 @@ class UserController extends Controller
         //
         return User::find($id);
     }
+    public function logout(){
+        request()->session()->forget('user');
+        return redirect('login')->with('success', 'Sukses Melakukan Logout');
+    }
 }
