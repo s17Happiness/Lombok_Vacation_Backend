@@ -7,7 +7,7 @@ use App\Models\UnitFacilities;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UnitFacilitiesSeeders extends Seeder
+class UnitFacilitiesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
