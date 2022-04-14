@@ -35,7 +35,7 @@
                     @foreach ($results as $key => $result)
                         <tr>
                             <td>{{ $result->unit_name }}</td>
-                            <td>{{ $result->unit_picture }}</td>
+                            <td><img width="100" src="{{ asset('assets/images/unit/' . $result->unit_picture) }}" alt="test"></td>
                             <td>{{ $result->unit_description }}</td>
                             <td>{{ $result->total_unit }}</td>
                             <td>{{ $result->price }}</td>

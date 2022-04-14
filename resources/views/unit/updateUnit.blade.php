@@ -12,7 +12,7 @@
     <a href="#" id="tambahFacilities" data-toggle="modal" data-target="#tambahModal"><button type="button" class="btn1 btn-success" style="margin-left:70px">Tambah Unit Facility</button></a>
 
     <div>
-        <form action="{{ url('property/' . $id . '/update-unit' . '/' . $unit_id) }}" method="POST">
+        <form action="{{ url('property/' . $id . '/update-unit' . '/' . $unit_id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label style="margin-left: 75px; margin-top: 5px; font-size: small; color: #181E4B;" for="uname">Nama Unit</label>
             <br>
