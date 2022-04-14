@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Property;
+use Carbon\Carbon;
 class PropertySeeder extends Seeder
 {
     /**
@@ -15,6 +16,37 @@ class PropertySeeder extends Seeder
     public function run()
     {
         //
-        Property::factory()->count(20)->create();
+        $data = [
+            [
+                'user_id' => 2,
+                'property_name' => "Golden Palace",
+                'area' => "mataram", // password
+                'type' => "hotel",
+                'created_at' => Carbon::now()->addHour()
+            ],
+            [
+                'user_id' => 2,
+                'property_name' => "Villa Kami",
+                'area' => "lombok barat", // password
+                'type' => "villa",
+                'created_at' => Carbon::now()->addHour()
+            ],
+            [
+                'user_id' => 2,
+                'property_name' => "aruna",
+                'area' => "lombok timur", // password
+                'type' => "cottage",
+                'created_at' => Carbon::now()->addHour()
+            ],
+            [
+                'user_id' => 2,
+                'property_name' => "svarga",
+                'area' => "lombok utara", // password
+                'type' => "guest house",
+                'created_at' => Carbon::now()->addHour()
+            ],
+        ];
+
+        Property::insert($data);
     }
 }

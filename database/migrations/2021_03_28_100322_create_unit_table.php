@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('property_id')->references('id')->on('property')->onDelete('cascade');
             $table->string('unit_name');
             $table->string('unit_picture');
-            $table->string('unit_description');
+            $table->longText('unit_description');
             $table->integer('total_unit');
             $table->double('price');
             $table->timestamps();

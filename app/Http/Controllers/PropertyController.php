@@ -70,7 +70,7 @@ class PropertyController extends Controller
     }
 
     public function guesthouseView(){
-        $results = Property::where('type', '=', 'guest_house')->paginate(5);
+        $results = Property::where('type', '=', 'guest house')->paginate(5);
         $title = "Guest House List";
         return view('property.guesthouse', compact('results','title'));
     }

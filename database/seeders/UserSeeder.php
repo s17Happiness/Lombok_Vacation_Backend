@@ -19,8 +19,6 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
-        User::factory()->count(10)->create();
-
         $data = [
             [
                 'name' => "ADMIN",
@@ -32,9 +30,19 @@ class UserSeeder extends Seeder
                 'remember_token' => Str::random(10),
                 'created_at' => Carbon::now()->addHour()
             ],
-
+            [
+                'name' => "Hanvito",
+                'email' => "hanvito12@gmail.com",
+                'email_verified_at' => now(),
+                'password' => Hash::make('hanvito'), // password
+                'no_hp' => "085324221422",
+                'role' => "mitra",
+                'remember_token' => Str::random(10),
+                'created_at' => Carbon::now()->addHour()
+            ],
         ];
 
         User::insert($data);
+        User::factory()->count(10)->create();
     }
 }
