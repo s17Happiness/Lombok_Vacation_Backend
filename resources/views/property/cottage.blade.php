@@ -7,7 +7,6 @@
         <h3><span class="title">Lombok Vacation</span></h3>
         <h3><span class="head">{{ $title }}</span></h3>
         <a href="{{ url('add-property') }}"><button type="submit" class="btn-tambah">Tambah</button></a>
-
     </div>
 
     <img class="gambar1" src="/image/Decore.png" alt="">

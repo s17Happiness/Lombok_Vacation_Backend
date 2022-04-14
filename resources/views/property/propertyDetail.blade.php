@@ -47,7 +47,6 @@
                                     <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-warning"><i class="fas fa-edit"></i></button></a>
                                     <button type="submit" class="btn1 btn-danger"><i class="far fa-trash-alt"></i></button>
                                     {{-- <a href="{{ url('property/' . $id . '/update-unit' . '/' . $result->id) }}"><button type="button" class="btn1 btn-success"><i class="fa-solid fa-plus"></i></button></a> --}}
-                                    <a href="#" id="tambahFacilities" data-toggle="modal" data-target="#tambahModal"><button type="button" class="btn1 btn-success"><i class="fa-solid fa-plus"></i></button></a>
                                 </form>
                             </td>
                         </tr>

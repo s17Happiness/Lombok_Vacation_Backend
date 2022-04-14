@@ -46,7 +46,7 @@ class UserController extends Controller
         return view('dashboard',compact('title'));
     }
     public function kelolaUserView(){
-        $results = User::all();
+        $results = User::paginate(5);
         $title = "Kelola User";
         return view('kelolaUser', compact('title','results'));
     }

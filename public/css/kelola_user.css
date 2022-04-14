@@ -24,35 +24,11 @@
     color: white;
 }
 
-.entry {
-    color: #5E6282;
-    position: relative;
-    font-size: 15px;
-    top: 34px;
-    left: 200px;
-}
-
 .title {
     color: #5E6282;
     position: relative;
     font-size: 15px;
     top: 70px;
-    left: 98px;
-}
-
-.content {
-    color: #5E6282;
-    position: relative;
-    font-size: 15px;
-    top: 50px;
-    left: 98px;
-}
-
-.content2 {
-    color: #5E6282;
-    position: relative;
-    font-size: 15px;
-    top: 20px;
     left: 98px;
 }
 
@@ -67,20 +43,6 @@
 .btn:hover {
     color: #fff;
 }
-
-
-/* .btn-tambah {
-    position: relative;
-    border-radius: 5px;
-    left: 110px;
-    top: 20px;
-    width: 80px;
-    height: 35px;
-    background-color: #F1A501;
-    color: 000000;
-    font-weight: bold;
-    font-size: 13px;
-} */
 
 .navbar-light .navbar-nav .nav-link.active {
     color: black;
@@ -119,20 +81,13 @@
 table {
     width: 1070px;
     border-collapse: collapse;
-    position: absolute;
+    position: relative;
     margin-top: 70px;
     margin-left: 100px;
     z-index: 1;
 }
 
-.header_fixed {
-    /* max-height: 100vh; */
-    width: 100%;
-    overflow: auto;
-    /* z-index: 1; */
-}
-
-.header_fixed thead th {
+thead th {
     position: relative;
     top: 0;
     background-color: #181E4B;
@@ -187,8 +142,6 @@ tr:hover td {
     display: none;
     /* Hidden by default */
     position: fixed;
-    /* Stay in place */
-    /* z-index: 1; */
     /* Sit on top */
     left: 0;
     top: 0;
