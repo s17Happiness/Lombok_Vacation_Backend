@@ -1,15 +1,14 @@
 @push('styles')
-   <link rel="stylesheet" href={{asset('css/add_unit.css')}}>
+    <link rel="stylesheet" href={{ asset('css/add_unit.css') }}>
 @endpush
 @extends("layout.main")
 @section('content')
-
     <div class="gambar1"><img width="550" height="550" src="/image/Decore-property.png"></div>
 
     <h6 style="color: gray; font-size: small;">Lombok Vacation Property Unit</h6>
-    <h3><span class="head">{{$title}}</span></h3>
+    <h3><span class="head">{{ $title }}</span></h3>
     <div>
-        <form action="{{ url('property/' . $id . '/add-unit') }}" method="POST">
+        <form action="{{ url('property/' . $id . '/add-unit') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label style="margin-left: 75px; margin-top: 5px; font-size: small; color: #181E4B;" for="uname">Nama Unit</label>
             <br>

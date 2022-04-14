@@ -20,7 +20,12 @@ class UnitController extends Controller
             'total_unit' => 'required',
             'price' => 'required',
             'desc' => 'required',
+            'filename' => 'required'
         ]);
+
+        $name = $request->file('filename')->getClientOriginalName();
+
+        $request->filename->move(public_path('assets/images/unit'), $name);
 
         $unit = Unit::create([
             'property_id' => $id,
@@ -28,7 +33,7 @@ class UnitController extends Controller
             'unit_description' => $request->desc,
             'total_unit' => $request->total_unit,
             'price' => $request->price,
-            'unit_picture' => "test pict"
+            'unit_picture' => $name
         ]);
 
 
@@ -53,11 +58,15 @@ class UnitController extends Controller
     public function updateUnit(Request $request, $id, $unit_id){
         $this->validate(request(), [
             'unit_name' => 'nullable',
-            'unit_picture' => 'nullable',
+            'filename' => 'nullable',
             'unit_description' => 'nullable',
             'total_unit' => 'nullable',
             'price' => 'nullable'
         ]);
+
+        $name = $request->file('filename')->getClientOriginalName();
+
+        $request->filename->move(public_path('assets/images/unit'), $name);
 
         Unit::where('property_id', $id)
         ->where('id', $unit_id)
@@ -66,7 +75,7 @@ class UnitController extends Controller
             'unit_description'=>$request->desc,
             'total_unit'=>$request->total_unit,
             'price'=>$request->price,
-            'unit_picture'=>$request->filename
+            'unit_picture'=>$name
         ]);
 
         return redirect()->back();
