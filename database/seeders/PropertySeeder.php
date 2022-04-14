@@ -42,7 +42,7 @@ class PropertySeeder extends Seeder
                 'user_id' => 2,
                 'property_name' => "svarga",
                 'area' => "lombok utara", // password
-                'type' => "guest house",
+                'type' => "guest_house",
                 'created_at' => Carbon::now()->addHour()
             ],
         ];
