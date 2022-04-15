@@ -218,15 +218,6 @@ class UnitSeeder extends Seeder
                 'created_at' => Carbon::now()->addHour()
             ],
             [
-                'property_id' => 9,
-                'unit_name' => "Bungalow Garden View",
-                'unit_picture' => "unit3merumatta.jpg",
-                'unit_description' => "Bungalow garden, 1 double bed, 2 guests, free breakfast",
-                'total_unit' => 2,
-                'price' => 910000,
-                'created_at' => Carbon::now()->addHour()
-            ],
-            [
                 'property_id' => 10,
                 'unit_name' => "Standard Double",
                 'unit_picture' => "unit1grand.jpg",
