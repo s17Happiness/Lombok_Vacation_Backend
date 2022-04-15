@@ -28,16 +28,16 @@
     color: #5E6282;
     position: relative;
     font-size: 15px;
-    top: 70px;
-    left: 98px;
+    top: 30px;
+    left: 80px;
 }
 
 .head {
     color: #181E4B;
     position: relative;
     font-size: 50px;
-    top: 70px;
-    left: 97px;
+    top: 20px;
+    left: 75px;
 }
 
 .btn:hover {
@@ -63,14 +63,7 @@
     top: -365px;
     right: -35px;
     width: 700px;
-}
-
-.quotes {
-    position: absolute;
-    top: 540px;
-    right: 500px;
-    width: 250px;
-    z-index: 1;
+    z-index: -1;
 }
 
 
@@ -81,14 +74,14 @@
 table {
     width: 1070px;
     border-collapse: collapse;
-    position: relative;
+    /* position: relative; */
     margin-top: 70px;
     margin-left: 100px;
     z-index: 1;
 }
 
 thead th {
-    position: relative;
+    /* position: relative; */
     top: 0;
     background-color: #181E4B;
     color: #e6e7e8;

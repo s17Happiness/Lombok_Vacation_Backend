@@ -22,7 +22,7 @@ class PropertyFactory extends Factory
             'user_id'=> User::all()->random()->id,
             'property_name' => $this->faker->word,
             'area' => $this->faker->randomElement(['lombok barat','lombok timur','lombok utara', 'lombok tengah', 'gili', 'mataram']),
-            'type' => $this->faker->randomElement(['villa','hotel','guest house','cottage']),
+            'type' => $this->faker->randomElement(['villa','hotel','guest_house','cottage']),
             'created_at' => Carbon::now()->addHour()
         ];
     }

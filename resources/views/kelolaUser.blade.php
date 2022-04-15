@@ -3,48 +3,51 @@
 @endpush
 @extends("layout.main")
 @section('content')
-    <div class="row">
-        <h3><span class="title">Lombok Vacation</span></h3>
-        <h3><span class="head">{{ $title }}</span></h3>
+    <div class="section-header">
+        <h1><span class="title">Lombok Vacation</span></h1>
+        <h2><span class="head">{{ $title }}</span></h2>
+        <br>
     </div>
     <img class="gambar1" src="/image/Decore.png" alt="">
-    <div class="row">
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>No HP</th>
-                        <th>Role</th>
-                        <th>Tgl Dibuat</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($results as $key => $result)
+    <center>
+        <div class="section-body" style="width:90%;">
+            <div class="table-responsive">
+                <table id="myTable" class="display" style="width:100%;">
+                    <thead>
                         <tr>
-                            <td>{{ $result->id}}</td>
-                            <td>{{ $result->name }}</td>
-                            <td>{{ $result->email }}</td>
-                            <td>{{ $result->no_hp }}</td>
-                            <td>{{ $result->role }}</td>
-                            <td>{{ $result->created_at }}</td>
-                            <td>
-                                <a href="#" id="editUser" data-toggle="modal" data-target="#editModal" data-id="{{ $result->id }}"><button type="button" class="btn1 btn-warning"><i class="fas fa-edit"></i></button></a>
-                            </td>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>No HP</th>
+                            <th>Role</th>
+                            <th>Tgl Dibuat</th>
+                            <th>Action</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($results as $key => $result)
+                            <tr>
+                                <td>{{ $result->id}}</td>
+                                <td>{{ $result->name }}</td>
+                                <td>{{ $result->email }}</td>
+                                <td>{{ $result->no_hp }}</td>
+                                <td>{{ $result->role }}</td>
+                                <td>{{ $result->created_at }}</td>
+                                <td>
+                                    <a href="#" id="editUser" data-toggle="modal" data-target="#editModal" data-id="{{ $result->id }}"><button type="button" class="btn1 btn-warning"><i class="fas fa-edit"></i></button></a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <div class="row">    
+    </center>
+    {{-- <div class="row">    
         <div class="d-flex justify-content-center mt-3">
             {!! $results->links() !!}
         </div>
-    </div>
+    </div> --}}
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -115,6 +118,11 @@
                 })
             });
         });
+    </script>
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
     </script>
     @endpush
 @endsection

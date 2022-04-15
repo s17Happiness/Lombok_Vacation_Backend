@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -46,7 +46,7 @@ class UserController extends Controller
         return view('dashboard',compact('title'));
     }
     public function kelolaUserView(){
-        $results = User::paginate(5);
+        $results = User::all();
         $title = "Kelola User";
         return view('kelolaUser', compact('title','results'));
     }
