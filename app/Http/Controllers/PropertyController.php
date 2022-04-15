@@ -70,25 +70,56 @@ class PropertyController extends Controller
     }
 
     public function guesthouseView(){
-        $results = Property::where('type', '=', 'guest_house')->paginate(5);
+        $result;
         $title = "Guest House List";
+        $userId = auth()->user()->id;
+
+        if (auth()->user()->role == 'admin') {
+            $results = Property::where('type', '=', 'guest_house')->paginate(5);
+        } else {
+            $results = Property::where('type', '=', 'guest_house')->where('user_id', '=', $userId)->paginate(5);
+        }
+
+
         return view('property.guesthouse', compact('results','title'));
     }
 
     public function villaView(){
-        $results = Property::where('type', '=', 'villa')->paginate(5);
+        $results;
         $title = "Villa List";
+
+        $userId = auth()->user()->id;
+
+        if (auth()->user()->role == 'admin') {
+            $results = Property::where('type', '=', 'villa')->paginate(5);
+        } else {
+            $results = Property::where('type', '=', 'villa')->where('user_id', '=', $userId)->paginate(5);
+        }
         return view('property.villa', compact('results','title'));
     }
 
     public function hotelView(){
-        $results = Property::where('type', '=', 'hotel')->paginate(5);
+        $results;
         $title = "Hotel List";
+
+        $userId = auth()->user()->id;
+        if (auth()->user()->role == 'admin') {
+            $results = Property::where('type', '=', 'hotel')->paginate(5);
+        } else {
+            $results = Property::where('type', '=', 'hotel')->where('user_id', '=', $userId)->paginate(5);
+        }
         return view('property.hotel', compact('results','title'));
     }
     public function cottageView(){
-        $results = Property::where('type', '=', 'cottage')->paginate(5);
+        $results;
         $title = "Cottage List";
+
+        $userId = auth()->user()->id;
+        if (auth()->user()->role == 'admin') {
+            $results = Property::where('type', '=', 'cottage')->paginate(5);
+        } else {
+            $results = Property::where('type', '=', 'cottage')->where('user_id', '=', $userId)->paginate(5);
+        }
         return view('property.cottage', compact('results','title'));
     }
 
