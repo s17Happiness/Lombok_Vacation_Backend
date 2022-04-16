@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\PropertyController;
+use App\Http\Controllers\Api\UnitController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,8 +15,13 @@ use App\Http\Controllers\Api\UserController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::resource('property', PropertyController::class);
+    Route::resource('unit', UnitController::class);
+});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('login', [UserController::class, 'login']);
+Route::post('register', [UserController::class, 'store']);

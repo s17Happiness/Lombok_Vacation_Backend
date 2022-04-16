@@ -11,16 +11,10 @@ use Api;
 class UserController extends Controller
 {
 
-    private $code, $response;
-
-    public function __construct(){
-        $this->code = 200;
-        $this->response = [];
-    }
 
     public function generate_user($user){
         $success['user'] = $user;
-        $success['token'] = $user->createToken('lombok_vacation')->accessToken;
+        $success['token'] = $user->createToken('lombok_vacation')->plainTextToken;
 
         return $success;
     }
@@ -33,53 +27,25 @@ class UserController extends Controller
     {
         //
     }
-    // public function login(Request $request)
-    // {
-    //     $field = $request->validate([
-    //         'email' => 'required',
-    //         'password' => 'required',
-    //     ]);
-    //     if($request->remember_token){
-    //         $data = User::where('email', $request->email)->where('remember_token', $request->remember_token)->first();
-
-    //         if(is_null($data)){
-    //             $user = User::create([
-    //                 'name' => $request->name,
-    //                 'email' => $request->email,
-    //                 'remember_token' => $request->remember_token,
-    //                 'role' => $request->role,
-    //                 'email_verified_at' => Carbon::now(),
-    //             ]);
-    //         } else if(Auth::loginUsingId($data->id)){
-    //             $user = Auth::user();
-    //         }
-
-    //         $this->response = $this->generate_user($user);
-    //     } else if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-    //         $user = Auth::user();
-    //         $this->response = $this->generate_user($user);
-    //     } else {
-    //         $this->code = 401;
-    //     }
-
-    //     return Api::apiRespond($this->code, $this->response);
-    // }
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+        'email' => 'required',
+        'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
-            return response()->json([
-                'email' => $request->email,
-            ]);
+            $user = Auth::user();
+            $response = $this->generate_user($user);
+            return response()->json($response);
         }
 
         return response()->json([
-            'email' => $request->email,
+            'message' => 'email/password salah',
         ]);
+
     }
     /**
      * Store a newly created resource in storage.
@@ -89,7 +55,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'no_hp' => 'required'
+        ]);
+        $user = User::create(request(['name', 'email', 'password', 'no_hp']));
+
+        $login = auth()->login($user);
+
+        if ($login) {
+            $response = $this->generate_user($user);
+            return response()->json($response);
+        }
+
+        return response()->json([
+            'message' => 'data salah',
+        ]);
+
     }
 
     /**
