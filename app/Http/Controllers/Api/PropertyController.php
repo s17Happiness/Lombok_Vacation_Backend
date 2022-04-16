@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Validator;
+use App\Models\Property;
+use App\Http\Resources\PropertyResource;
 
 class PropertyController extends Controller
 {
@@ -14,7 +17,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        $data = Property::latest()->get();
+        return response()->json([PropertyResource::collection($data), 'Programs fetched.']);
     }
 
     /**
@@ -25,7 +29,24 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'name' => 'required',
+            'area' => 'required',
+            'type' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors());
+        }
+
+        $property = Property::create([
+            'user_id' => $request->user()->id,
+            'property_name' => $request->name,
+            'area' => $request->area,
+            'type' => $request->type,
+         ]);
+
+        return response()->json(['Property created successfully.', new PropertyResource($property)]);
     }
 
     /**
@@ -36,7 +57,11 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        //
+        $property = Property::find($id);
+        if (is_null($property)) {
+            return response()->json('Data not found', 404);
+        }
+        return response()->json([new PropertyResource($property)]);
     }
 
     /**
@@ -46,9 +71,24 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Property $property)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'name' => 'required',
+            'area' => 'required',
+            'type' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors());
+        }
+
+        $property->property_name = $request->name;
+        $property->area = $request->area;
+        $property->type = $request->type;
+        $property->save();
+
+        return response()->json(['Property updated successfully.', new PropertyResource($property)]);
     }
 
     /**
@@ -57,8 +97,10 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Property $property)
     {
-        //
+        $property->delete();
+
+        return response()->json('Property deleted successfully');
     }
 }
