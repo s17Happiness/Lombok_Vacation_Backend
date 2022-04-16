@@ -76,6 +76,7 @@
     top: -365px;
     right: -35px;
     width: 700px;
+    z-index: -1;
 }
 
 .quotes {

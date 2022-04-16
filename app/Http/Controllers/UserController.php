@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function generate_user($user){
+        $success['user'] = $user;
+        $success['token'] = $user->createToken('digimu_abp')->accessToken;
+
+        return $success;
+    }
+
     public function login(Request $request){
         $request->validate([
             'email' => 'required',
@@ -15,6 +22,7 @@ class UserController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/dashboard')
                         ->withSuccess('Signed in');
@@ -46,7 +54,7 @@ class UserController extends Controller
         return view('dashboard',compact('title'));
     }
     public function kelolaUserView(){
-        $results = User::paginate(5);
+        $results = User::all();
         $title = "Kelola User";
         return view('kelolaUser', compact('title','results'));
     }

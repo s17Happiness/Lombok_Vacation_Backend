@@ -8,18 +8,20 @@
     <div class="row">
         <h3><span class="title">Lombok Vacation</span></h3>
         <h3><span class="head">Dashboard</span></h3>
-        <li class="navbar">
-            <a class="nav-link" href="{{ url('villa') }}"><img class="DashboardList" src="/image/dahsboard list.png" alt=""></a>
-        </li>
-        <li class="navbar">
-            <a class="nav-link" href="{{ url('hotel') }}"><img class="DashboardList2" src="/image/dahsboard list2.png" alt=""></a>
-        </li>
-        <li class="navbar">
-            <a class="nav-link" href="{{ url('cottage') }}"><img class="DashboardList3" src="/image/dahsboard list3.png" alt=""></a>
-        </li>
-        <li class="navbar">
-            <a class="nav-link" href="{{ url('guest-house') }}"><img class="DashboardList4" src="/image/dahsboard list4.png" alt=""></a>
-        </li>
+        <center>
+            <li class="navbar">
+                <a class="nav-link" href="{{ url('villa') }}"><img class="DashboardList" src="/image/dahsboard list.png" alt=""></a>
+            </li>
+            <li class="navbar">
+                <a class="nav-link" href="{{ url('hotel') }}"><img class="DashboardList2" src="/image/dahsboard list2.png" alt=""></a>
+            </li>
+            <li class="navbar">
+                <a class="nav-link" href="{{ url('cottage') }}"><img class="DashboardList3" src="/image/dahsboard list3.png" alt=""></a>
+            </li>
+            <li class="navbar">
+                <a class="nav-link" href="{{ url('guest-house') }}"><img class="DashboardList4" src="/image/dahsboard list4.png" alt=""></a>
+            </li>
+        </center>
     </div>
 
     <img class="gambar1" src="/image/Decore.png" alt="">
