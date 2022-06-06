@@ -18,7 +18,7 @@ class PropertyController extends Controller
     public function index()
     {
         $data = Property::latest()->get();
-        return response()->json([PropertyResource::collection($data), 'Programs fetched.']);
+        return response()->json($data);
     }
 
     /**
