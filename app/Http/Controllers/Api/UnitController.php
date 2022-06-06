@@ -18,7 +18,7 @@ class UnitController extends Controller
     public function index()
     {
         $data = Unit::latest()->get();
-        return response()->json([UnitResource::collection($data), 'Programs fetched.']);
+        return response()->json($data);
     }
 
     /**
@@ -62,11 +62,11 @@ class UnitController extends Controller
      */
     public function show($id)
     {
-        $unit = Unit::find($id);
+        $unit = Unit::where('property_id', '=', $id)->get();
         if (is_null($unit)) {
             return response()->json('Data not found', 404);
         }
-        return response()->json([new UnitResource($unit)]);
+        return response()->json($unit);
     }
 
     /**
