@@ -46,7 +46,7 @@ class PropertyController extends Controller
             'type' => $request->type,
          ]);
 
-        return response()->json(['Property created successfully.', new PropertyResource($property)]);
+        return response()->json($property);
     }
 
     /**
@@ -88,7 +88,7 @@ class PropertyController extends Controller
         $property->type = $request->type;
         $property->save();
 
-        return response()->json(['Property updated successfully.', new PropertyResource($property)]);
+        return response()->json($property);
     }
 
     /**
