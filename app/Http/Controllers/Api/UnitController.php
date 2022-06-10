@@ -51,7 +51,7 @@ class UnitController extends Controller
             'price'=>$request->price,
          ]);
 
-        return response()->json(['Unit created successfully.', new UnitResource($unit)]);
+        return response()->json($unit);
     }
 
     /**
@@ -95,7 +95,7 @@ class UnitController extends Controller
         $unit->price = $request->price;
         $unit->save();
 
-        return response()->json(['Unit updated successfully.', new UnitResource($unit)]);
+        return response()->json($unit);
     }
 
     /**
