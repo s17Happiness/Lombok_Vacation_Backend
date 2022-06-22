@@ -1,15 +1,14 @@
-
 @push('styles')
-   <link rel="stylesheet" href={{asset('css/List_hotel.css')}}>
+    <link rel="stylesheet" href={{ asset('css/List_hotel.css') }}>
 @endpush
-@extends("layout.main")
+@extends('layout.main')
 @section('content')
     <div class="section-header">
         <h1><span class="title">Lombok Vacation</span></h1>
         <h2><span class="head">{{ $title }}</span></h2>
         <a href="{{ url('add-property') }}"><button type="submit" class="btn-tambah">Tambah</button></a>
         {{-- <button class="btn-tambah" href="{{ url('add-property') }}" type="submit">Tambah</button> --}}
-        
+
     </div>
 
     <img class="gambar1" src="image/Decore.png" alt="">
@@ -54,10 +53,10 @@
         </div>
     </center>
     @push('script')
-    <script>
-        $(document).ready( function () {
-            $('#myTable').DataTable();
-        } );
-    </script>
+        <script>
+            $(document).ready(function() {
+                $('#myTable').DataTable();
+            });
+        </script>
     @endpush
 @endsection
