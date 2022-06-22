@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\UnitHasFacilities;
+use App\Models\UnitFacilities;
+use App\Http\Resources\UnitHasFacilitiesResource;
 
 class UnitFacilitiesController extends Controller
 {
@@ -14,7 +17,8 @@ class UnitFacilitiesController extends Controller
      */
     public function index()
     {
-        //
+        $data = UnitFacilities::latest()->get();
+        return response()->json($data);
     }
 
     /**
@@ -23,9 +27,13 @@ class UnitFacilitiesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, $id, $unit_id){
+        $faciliti = UnitHasFacilities::create([
+            'unit_id' => $unit_id,
+            'facility_id' => $request->facility
+        ]);
+
+        return response()->json($faciliti);
     }
 
     /**
@@ -36,7 +44,8 @@ class UnitFacilitiesController extends Controller
      */
     public function show($id)
     {
-        //
+        $unitHasFacilities = UnitHasFacilities::with('facility')->where('unit_id', '=', $id)->get();
+        return response()->json($unitHasFacilities);
     }
 
     /**

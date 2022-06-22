@@ -58,21 +58,26 @@ class UserController extends Controller
         $this->validate(request(), [
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|confirmed',
+            'password' => 'required',
             'no_hp' => 'required'
         ]);
-        $user = User::create(request(['name', 'email', 'password', 'no_hp']));
 
-        $login = auth()->login($user);
+        $isEmailUsed = User::where("email", $request->email)->get();
 
-        if ($login) {
-            $response = $this->generate_user($user);
-            return response()->json($response);
-        }
-
-        return response()->json([
-            'message' => 'data salah',
+        if (count($isEmailUsed) > 0) return response()->json([
+            'message' => 'Email sudah digunakan',
         ]);
+
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'no_hp' => $request->no_hp,
+        ]);
+
+        return response()->json($user);
+
 
     }
 

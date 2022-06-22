@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\PropertyController;
 use App\Http\Controllers\Api\UnitController;
+use App\Http\Controllers\Api\UnitFacilitiesController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,6 +19,7 @@ use App\Http\Controllers\Api\UnitController;
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('property', PropertyController::class);
     Route::resource('unit', UnitController::class);
+    Route::resource('unit-facilities', UnitFacilitiesController::class);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
