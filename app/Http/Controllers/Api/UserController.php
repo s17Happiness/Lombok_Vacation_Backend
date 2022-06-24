@@ -101,7 +101,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'nullable',
+            'email' => 'nullable',
+            'no_hp' => 'nullable'
+        ]);
+
+
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->no_hp = $request->no_hp;
+
+        $user->save();
+
+        return response()->json([
+            'user' => $user,
+            'token' => '',
+        ]);
     }
 
     /**

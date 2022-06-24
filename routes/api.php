@@ -22,8 +22,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('unit-facilities', UnitFacilitiesController::class);
 });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 Route::post('login', [UserController::class, 'login']);
 Route::post('register', [UserController::class, 'store']);
+Route::put('update-profile/{id}', [UserController::class, 'update']);
